@@ -19,6 +19,11 @@ vusui/
 └── scss  //CSS扩展语言目录
 ```
 
+## 安装
+```
+$ npm install vusui --save
+```
+
 ### Api
 
 #### css
