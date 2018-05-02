@@ -1,0 +1,98 @@
+//页面布局
+body {
+    font-family: $family-base;
+    font-size: rem($font-size-base);
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: $body-bg;
+    text-align: left;
+}
+
+//布局
+#{$V}wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+//布局容器
+#{$V}container {
+    width: 100%;
+    padding-right: rem(10);
+    padding-left: rem(10);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+//宽度设置
+@each $key, $value in $sizes {
+    #{$V}w-#{$key} {
+        width: $value !important;
+    }
+}
+#{$V}mw-100 {
+    max-width: 100% !important;
+}
+
+//高度设置
+@each $key, $value in $sizes {
+    #{$V}h-#{$key} {
+        height: $value !important;
+    }
+}
+#{$V}mh-100 {
+    max-height: 100% !important;
+}
+
+//居中对齐
+#{$V}mx-auto {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+//块级
+#{$V}fluid {
+    width: 100% !important;
+    display: block !important;
+}
+
+//媒体查询
+@each $device, $value in $media-min-width {
+    @if $device != "us" {
+        @include media-min($device) {
+            #{$V}container {
+                max-width: map-get($container-max-width, $device);
+            }
+        }
+    }
+}
+
+//全视口
+#{$V}container-fluid {
+    width: 100%;
+    padding-right: rem(10);
+    padding-left: rem(10);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+//清除浮动
+.vus-container,
+.vus-container-fluid,
+.vus-h1,
+.vus-h2,
+.vus-h3,
+.vus-h4,
+.vus-h5,
+.vus-h6,
+.vus-p,
+.vus-dl,
+.vus-form,
+.vus-form-inline,
+.vus-radio,
+.vus-checkbox,
+.vus-switch {
+    @include clearfix;
+}

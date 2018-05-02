@@ -1,0 +1,197 @@
+//表格
+#{$V}table {
+	width: 100%;
+	max-width: 100%;
+	background-color: $--tp;
+	th,
+	td {
+		line-height: $line-height-sm;
+		padding: rem(8);
+		vertical-align: top;
+		border-top: rem($border-width-xs) $border-style-solid $--light-dark;
+		text-align: left;
+	}
+	thead th {
+		vertical-align: bottom;
+		border-bottom: rem($border-width-sm) $border-style-solid $--light-dark;
+	}
+	tbody + tbody {
+		border-top: rem($border-width-sm) $border-style-solid $--light-dark;
+	}
+	+ #{$V}table {
+		margin-top: rem(10);
+	}
+	//居中
+	&.v-text-center {
+		th,
+		td {
+			text-align: center;
+		}
+	}
+	//对齐位置
+	td[align="left"],
+	th[align="left"] {
+		text-align: left;
+	}
+	td[align="center"],
+	th[align="center"] {
+		text-align: center;
+	}
+	td[align="right"],
+	th[align="right"] {
+		text-align: right;
+	}
+	td[valign="top"],
+	th[valign="top"] {
+		vertical-align: top;
+	}
+	td[valign="center"],
+	th[valign="center"] {
+		vertical-align: middle;
+	}
+	td[valign="bottom"],
+	th[valign="bottom"] {
+		vertical-align: bottom;
+	}
+	//缩小内补距离
+	&.v-small {
+		th,
+		td {
+			padding: 4px;
+		}
+	}
+	//增加边框
+	&.v-border,
+	&.v-border th,
+	&.v-border td {
+		border: 1px solid #ddd;
+	}
+	&.v-border {
+		thead {
+			th,
+			td {
+			 	border-bottom-width: rem(2);
+			}
+		}
+	}
+	//条纹
+	&.v-striped {
+		tbody tr:nth-of-type(even) {
+			background-color: $--white-f6;
+		}
+	}
+	//鼠标经过
+	&.v-hover {
+		tbody tr:hover {
+			background-color: $--white-f3;
+		}
+	}
+	
+	//表头主题
+	@each $key, $value in $table-theme-color {
+		@if $key != "white" {
+			@include table-thead-color($key, $value)
+		}
+	}
+
+	//表格背景主题
+	@each $key, $value in $table-theme-color {
+		@if $key != "white" {
+			@include table-bg-color($key, $value)
+		}
+	}
+
+}
+
+//表说明文字
+#{$V}caption {
+	color: $--dark-light;
+	text-align: left;
+	padding: {
+		top: rem(8);
+		bottom: rem(8);
+	}
+}
+
+//响应表格
+#{$V}table-responsive {
+	min-height: .01%;
+	overflow-x: auto;
+
+	@at-root {
+		@include media-custom(null, 767px) {
+			#{$V}table-responsive {
+				width: 100%;
+				overflow-y: hidden;
+				-ms-overflow-style: -ms-autohiding-scrollbar;
+				border: 1px solid #ddd;
+
+				> .vus-table {
+					> thead > tr > th,
+					> tbody > tr > th,
+					> tfoot > tr > th,
+					> thead > tr > td,
+					> tbody > tr > td,
+					> tfoot > tr > td {
+						white-space: nowrap;
+					}
+					thead th {
+						border-top: 0 !important;
+					}
+					&.v-border {
+						border: 0;
+
+						> thead > tr > th:first-child,
+						> tbody > tr > th:first-child,
+						> tfoot > tr > th:first-child,
+						> thead > tr > td:first-child,
+						> tbody > tr > td:first-child,
+						> tfoot > tr > td:first-child {
+							border-left: 0;
+						}
+						> thead > tr > th:last-child,
+						> tbody > tr > th:last-child,
+						> tfoot > tr > th:last-child,
+						> thead > tr > td:last-child,
+						> tbody > tr > td:last-child,
+						> tfoot > tr > td:last-child {
+							border-right: 0;
+						}
+						> tbody > tr:last-child > th,
+						> tfoot > tr:last-child > th,
+						> tbody > tr:last-child > td,
+						> tfoot > tr:last-child > td {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//水平&垂直居中
+#{$V}center-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: table;
+	table-layout: fixed;
+	vertical-align: middle;
+	text-align: center;
+}
+#{$V}center-container {
+	width: 100%;
+	overflow: hidden;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	position: relative;
+}
+#{$V}center-inner {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+	vertical-align: middle;
+	display: inline-block;
+}

@@ -1,0 +1,14 @@
+//文本颜色
+@each $key, $value in $colors {
+    @include text-color($key, $value);
+}
+
+//背景颜色
+@each $key, $value in $colors {
+    @include bg-color($key, $value);
+}
+
+//边框颜色
+@each $key, $value in $colors {
+    @include border-color($key, $value);
+}

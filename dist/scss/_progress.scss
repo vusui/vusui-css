@@ -1,0 +1,37 @@
+//进度条
+#{$V}progress {
+	height: rem(12);
+	display: block;
+	overflow: hidden;
+	font-size: rem($font-size-xs);
+	background-color: $--light;
+	position: relative;
+}
+#{$V}progress-bar {
+	width: 0;
+	height: 100%;
+	line-height: $line-height-xs;
+	font-size: rem($font-size-xs);
+	color: $--white;
+	float: left;
+	text-align: center;
+	background-color: $--vusui;
+	transition: width .6s ease;
+
+	&.v-striped {
+		background-image: linear-gradient(45deg, rgba($--white, .15) 25%, $--tp 25%, $--tp 50%, rgba($--white, .15) 50%, rgba($--white, .15) 75%, $--tp 75%, $--tp);
+		background-size: 1rem 1rem;
+	}
+}
+//条纹动画
+#{$V}progress-anim {
+    animation: VusProgress 1s linear infinite;
+}
+@keyframes VusProgress {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}

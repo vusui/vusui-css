@@ -1,0 +1,480 @@
+//排版
+//标题h1,h2,h3,h4,h5,h6
+#{$V}h1, #{$V}h2, #{$V}h3, #{$V}h4, #{$V}h5, #{$V}h6 {
+    line-height: $line-height-sm;
+    color: inherit;
+    margin-bottom: rem(10);
+    font: {
+        family: inherit;
+        weight: $font-weight-medium;
+    }
+
+    .v-small {
+        color: $--dark-light;
+        font-weight: $font-weight-normal;
+    }
+}
+
+@each $key, $valus in (h1: $h1, h2: $h2, h3: $h3, h4: $h4, h5: $h5, h6: $h6) {
+    #{$V}#{$key} {
+        font-size: rem($valus);
+    }
+}
+
+#{$V}h1, #{$V}h2, #{$V}h3 {
+    .v-small {
+        font-size: 65%;
+    }
+}
+
+#{$V}h4, #{$V}h5, #{$V}h6 {
+    .v-small {
+        font-size: 75%;
+    }
+}
+
+//段落
+#{$V}p {
+    font-size: rem($font-size-sm);
+}
+#{$V}lead {
+    font-size: rem($font-size-md);
+}
+#{$V}p + #{$V}p,
+#{$V}lead + #{$V}lead,
+#{$V}p + #{$V}lead,
+#{$V}lead + #{$V}p {
+    margin-top: rem(10);
+}
+
+//小号文本
+#{$V}small {
+    font-size: 75%;
+}
+
+//表单组合
+#{$V}fieldset {
+    padding: rem(5) rem(10) rem(10);
+    border: rem($border-width-xs) $border-style-solid $--light-dark;
+
+    + #{$V}fieldset {
+        margin-top: rem(10);
+    }
+}
+#{$V}legend {
+    max-width: 100%;
+    display: table;
+    white-space: normal;
+    padding: 0 rem(10) rem(5);
+    font-weight: $font-weight-medium;
+}
+
+//地址
+#{$V}address {
+    font-style: normal;
+    line-height: inherit;
+
+    + #{$V}address {
+        margin-top: rem(10);
+    }
+} 
+
+//缩略语
+#{$V}abbr,
+#{$V}acronym {
+    &[title] {
+        cursor: help;
+        border-bottom: rem($border-width-xs) $border-style-dotted $--gray;
+        text-decoration: none;
+    }
+}
+
+//引用
+#{$V}blockquote {
+    padding: rem(8) rem(16);
+    font-size: rem(16);
+    border-left: rem($border-width-lg) $border-style-solid $--light-dark;
+    page-break-inside: avoid;
+
+    .v-small {
+        display: block;
+        font-size: 75%;
+        color: $--dark-light;
+        &:before {
+            content: "\2014 \00A0";
+        }
+    }
+    &.v-reverse {
+        padding: {
+            left: 0;
+            right: rem(16);
+        }
+        border: {
+            left: 0;
+            right: rem($border-width-lg) $border-style-solid $--light-dark;
+        }
+        text-align: right;
+
+        .v-small {
+            &:before {
+                content: "";
+            }
+            &:after {
+                content: "\00A0 \2014";
+            }
+        }
+    }
+    + #{$V}blockquote {
+        margin-top: rem(10);
+    }
+}
+
+//文档中插图
+#{$V}figure {
+    margin: rem(16) rem(32);
+}
+
+//内联文本
+#{$V}mark {
+    padding: 0 rem(2);
+    background-color: $--yellow-light;
+}
+
+//左对齐
+#{$V}text-left {
+    text-align: left !important;
+}
+//居中对齐
+#{$V}text-center {
+    text-align: center !important;
+}
+//右对齐
+#{$V}text-right {
+    text-align: right !important;
+}
+//两端对齐
+#{$V}text-justify {
+    text-align: justify !important;
+}
+//全小写
+#{$V}text-lowercase {
+    text-transform: lowercase !important;
+}
+//全大写
+#{$V}text-uppercase {
+    text-transform: uppercase !important;
+}
+//首字母大写
+#{$V}text-capitalize {
+    text-transform: capitalize !important;
+}
+//删除线
+#{$V}text-through {
+    text-decoration: line-through !important;
+}
+//上划线
+#{$V}text-overline {
+    text-decoration: overline !important;
+}
+//下划线
+#{$V}text-underline {
+    text-decoration: underline !important;
+}
+//间距
+#{$V}text-spacing {
+    letter-spacing: rem(1) !important;
+}
+//首行缩进
+#{$V}text-indent {
+    text-indent: rem(18) !important;
+}
+//文本溢出显示省略号
+#{$V}text-ellipsis {
+    @include ellipsis;
+}
+//文本不换行
+#{$V}text-nowrap {
+    white-space: nowrap !important;
+}
+//文本倾斜
+#{$V}text-italic {
+    font-style: italic !important;
+}
+//消除字体样式
+#{$V}style-normal {
+    font-style: normal !important;
+}
+/*文本加粗*/
+#{$V}text-bold {
+    font-weight: $font-weight-heavy !important;
+}
+//清除文本加粗
+#{$V}weight-normal {
+    font-weight: normal !important;
+}
+//文本以字母作为换行
+#{$V}text-break-all {
+    word-break: break-all !important;
+}
+//文本以单词作为换行
+#{$V}text-break-word {
+    word-wrap: break-word !important;
+}
+//文本以中文作为换行
+#{$V}text-pre-wrap {
+    white-space: pre-wrap !important;
+}
+
+//左浮动
+#{$V}fl {
+    float: left !important;
+}
+//右浮动
+#{$V}fr {
+    float: right !important;
+}
+//清除浮动
+#{$V}fn {
+    float: none !important;
+}
+
+//字体大小
+$fontSize: 12 14 16 18 20 30 40 50;
+@for $i from 1 through length($fontSize) {
+    #{$V}fs-#{nth($fontSize, $i)} {
+        font-size: rem(nth($fontSize, $i)) !important;
+    }
+}
+
+//圆角半径
+@for $i from 0 through 10 {
+    #{$V}br-#{$i} {
+        border-radius: rem($i) !important;
+    }
+}
+#{$V}br-circle {
+    border-radius: 50% !important;
+}
+
+//媒体查询
+@each $device, $value in $media-min-width {
+    @if $device != "us" {
+        @include media-min($device) {
+            //字体大小
+            @for $i from 1 through length($fontSize) {
+                #{$V}fs-#{$device}-#{nth($fontSize, $i)} {
+                    font-size: nth($fontSize, $i) * 1px !important;
+                }
+            }
+            //圆角半径
+            @for $i from 0 through 10 {
+                #{$V}br-#{$device}-#{$i} {
+                    border-radius: rem($i) !important;
+                }
+            }
+            #{$V}br-#{$device}-circle {
+                border-radius: 50% !important;
+            }
+            //左浮动
+            #{$V}fl-#{$device} {
+                float: left !important;
+            }
+            //右浮动
+            #{$V}fr-#{$device} {
+                float: right !important;
+            }
+            //清除浮动
+            #{$V}fn-#{$device} {
+                float: none !important;
+            }
+        }
+    }
+}
+
+//边框
+#{$V}border {
+    border: rem($border-width-xs) $border-style-solid $--light-dark !important;
+    
+    &.v- {
+        &nt {
+            border-top: 0 !important;
+        }
+        &nr {
+            border-right: 0 !important;
+        }
+        &nb {
+            border-bottom: 0 !important;
+        }
+        &nl {
+            border-left: 0 !important;
+        }
+        &none {
+            border: 0 !important;
+        }
+        //边框大小
+        @for $i from 2 through 10 {
+            &w#{$i} {
+                border-width: rem($i) !important;
+            }
+        }
+        //实线类型
+        &solid {
+            border-style: solid !important;
+        }
+        //虚线类型
+        &dashed {
+            border-style: dashed !important;
+        }
+        //圆点虚线类型
+        &dotted {
+            border-style: dotted !important;
+        }
+        //双实线类型
+        &double {
+            border-style: double !important;
+        }
+    }
+}
+
+//旋转与翻转
+$rotate-angle: 90 180 270;
+@for $i from 1 through length($rotate-angle) {
+    #{$V}rotate-#{nth($rotate-angle, $i)} {
+        transform: rotate(#{nth($rotate-angle, $i)}deg);
+    }
+}
+
+//徽章
+#{$V}badge {
+    line-height: $line-height-xs;
+    display: inline-block;
+    padding: rem(3) rem(6);
+    font-size: rem($font-size-xs);
+    font-weight: $font-weight-heavy;
+    color: $--white;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: rem(3);
+    background-color: $--vusui;
+    
+    &.v-pill {
+        border-radius: 10rem;
+    }
+    &.v-large {
+        padding: rem(6) rem(10);
+        font-size: rem($font-size-md);
+    }
+}
+
+//水平线
+#{$V}hr {
+    width: 100%;
+    height: rem(1);
+    clear: both;
+    border: 0;
+    background-color: $--light-dark;
+    display: block;
+}
+
+//响应式图片
+#{$V}img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+//实用工具
+#{$V}hidden {
+    overflow: hidden !important;
+}
+#{$V}visible {
+    overflow: visible !important;
+}
+#{$V}inline {
+    display: inline !important;
+}
+#{$V}inline-block {
+    display: inline-block !important;
+}
+#{$V}align-top {
+    vertical-align: top !important;
+}
+#{$V}align-middle {
+    vertical-align: middle !important;
+}
+#{$V}align-bottom {
+    vertical-align: bottom !important;
+}
+#{$V}show {
+    display: block !important;
+}
+#{$V}hide {
+    display: none !important;
+}
+
+//鼠标--点击
+#{$V}cursor-pointer {
+    cursor: pointer;
+}
+//鼠标--默认
+#{$V}cursor-default {
+    cursor: default;
+}
+//鼠标--禁用
+#{$V}cursor-disabled {
+    cursor: not-allowed;
+}
+
+//位置
+#{$V}fixed,
+#{$V}absolute {
+    &.v- {
+        &t {
+            top: 0;
+        }
+        &b {
+            bottom: 0;
+        }
+        &l {
+            left: 0;
+        }
+        &r {
+            right: 0;
+        }
+        &.v-tl {
+            top: 0;
+            left: 0;
+        }
+        &tr {
+            top: 0;
+            right: 0;
+        }
+        &bl {
+            left: 0;
+            bottom: 0;
+        }
+        &br {
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+//固定位置
+#{$V}fixed {
+    position: fixed !important;
+}
+/*绝对位置*/
+#{$V}absolute {
+    position: absolute !important;
+}
+//相对位置
+#{$V}relative {
+    position: relative !important;
+}
+//position索引
+@for $i from 0 through 5 {
+    #{$V}zindex-#{$i} {
+        z-index: $i;
+    }
+}

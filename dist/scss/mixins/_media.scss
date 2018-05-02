@@ -1,0 +1,116 @@
+//媒体查询
+//下一个设备
+@function device-next($name, $device: $media-min-width, $device-names: map-keys($device)) {
+	$n: index($device-names, $name);
+	@return if($n < length($device-names), nth($device-names, $n + 1), null);
+}
+
+//最小设备
+@function device-min($name, $device: $media-min-width) {
+    $min: map-get($device, $name);
+    @return if($min != 0, $min, null);
+}
+
+//最大设备
+@function device-max($name, $device: $media-min-width) {
+	$next: device-next($name, $device);
+	@return if($next, device-min($next, $device) - .02px, null);
+}
+
+//设备中缀
+@function device-infix($name, $device: $media-min-width) {
+    @return if(device-min($name, $device) == null, "", "-#{$name}");
+}
+
+//设备查询(大于等于)
+@mixin media-min($name, $device: $media-min-width) {
+    $min: device-min($name, $device);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+//设备查询(小于等于)
+@mixin media-max($name, $device: $media-min-width) {
+    $max: device-max($name, $device);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+//在..之间设备查询
+@mixin media-between($lower, $upper, $device: $media-min-width) {
+    $min: device-min($lower, $device);
+    $max: device-max($upper, $device);
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+    @else if $max == null {
+        @include media-min($lower, $device) {
+            @content;
+        }
+    }
+    @else if $min == null {
+        @include media-max($upper, $device) {
+            @content;
+        }
+    }
+}
+
+//指定设备查询(唯一设备)
+@mixin media-only($name, $device: $media-min-width) {
+    $min: device-min($name, $device);
+    $max: device-max($name, $device);
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+    @else if $max == null {
+        @include media-min($name, $device) {
+            @content;
+        }
+    }
+    @else if $min == null {
+        @include media-max($name, $device) {
+            @content;
+        }
+    }
+}
+
+//自定义设备查询
+@mixin media-custom($min, $max: null, $reverse: false) {
+    @if $min != null and $max != null {
+        @if $reverse {
+            @media (max-width: $max) and (min-width: $min) {
+                @content;
+            }
+        }
+        @else { 
+            @media (min-width: $min) and (max-width: $max) {
+                @content;
+            }
+        }
+    }
+    @else if $max == null {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+    @else if $min == null {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+}

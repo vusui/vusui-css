@@ -1,0 +1,52 @@
+//IE9专用
+select#{$V}input:not([multiple]) {
+	padding-right: rem(8)\9;
+	background-image: none\9;
+}
+
+#{$V}tips {
+	&:before;
+	&:after,
+	&:hover:before,
+	&:hover:after,
+	&.v-bottom:before,
+	&.v-bottom:after,
+	&.v-bottom:hover:before,
+	&.v-bottom:hover:after {
+		-ms-transform: translateX(-50%)\9;
+	}
+	&.v-left:before,
+	&.v-left:after,
+	&.v-left:hover:before,
+	&.v-left:hover:after,
+	&.v-right:before,
+	&.v-right:after,
+	&.v-right:hover:before,
+	&.v-right:hover:after {
+		-ms-transform: translateY(-50%)\9;
+	}
+}
+
+%flex-col-ie9 {
+	float: left\9;
+}
+//col
+@for $i from 1 through 12 {
+	#{$V}col-#{$i} {
+		@extend %flex-col-ie9;
+	}
+}
+//flex
+@for $i from 1 through 10 {
+	#{$V}flex-#{$i} {
+		@extend %flex-col-ie9;
+	}
+}
+#{$V}col,
+#{$V}flex {
+	@extend %flex-col-ie9;
+
+	&-auto {
+		@extend %flex-col-ie9;
+	}
+}
