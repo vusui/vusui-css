@@ -57,14 +57,14 @@
 	&.v-small {
 		th,
 		td {
-			padding: 4px;
+			padding: rem(4);
 		}
 	}
 	//增加边框
 	&.v-border,
 	&.v-border th,
 	&.v-border td {
-		border: 1px solid #ddd;
+		border: rem($border-width-xs) $border-style-solid $--light-dark;
 	}
 	&.v-border {
 		thead {
@@ -124,7 +124,7 @@
 				width: 100%;
 				overflow-y: hidden;
 				-ms-overflow-style: -ms-autohiding-scrollbar;
-				border: 1px solid #ddd;
+				border: rem($border-width-xs) $border-style-solid $--light-dark;
 
 				> .vus-table {
 					> thead > tr > th,

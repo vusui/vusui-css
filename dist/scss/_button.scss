@@ -11,7 +11,7 @@
 		image: none;
 	}
 	border: rem($border-width-xs) $border-style-solid $--light-dark;
-	border-radius: 3px;
+	border-radius: rem(3);
 	font-size: rem($font-size-sm);
 	outline: 0;
 	position: relative;

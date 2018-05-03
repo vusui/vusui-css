@@ -263,7 +263,7 @@ $fontSize: 12 14 16 18 20 30 40 50;
             //字体大小
             @for $i from 1 through length($fontSize) {
                 #{$V}fs-#{$device}-#{nth($fontSize, $i)} {
-                    font-size: nth($fontSize, $i) * 1px !important;
+                    font-size: nth($fontSize, $i) * rem(1) !important;
                 }
             }
             //圆角半径

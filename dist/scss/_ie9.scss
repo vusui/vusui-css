@@ -5,7 +5,7 @@ select#{$V}input:not([multiple]) {
 }
 
 #{$V}tips {
-	&:before;
+	&:before,
 	&:after,
 	&:hover:before,
 	&:hover:after,
