@@ -1,4 +1,4 @@
-<p align="center"><a href="http://vusui.com" target="_blank" rel="noopener noreferrer"><img width="114" src="http://vusui.com/images/vusui-114-114.png" alt="VusUI logo"></a></p>
+<p align="center"><a href="http://vusui.cn" target="_blank" rel="noopener noreferrer"><img width="114" src="http://vusui.com/static/img/logo.c874a2a.svg" alt="VusUI logo"></a></p>
 
 # VusUI css framework
 ## 持续更新中...
