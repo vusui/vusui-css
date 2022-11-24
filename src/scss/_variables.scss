@@ -1,0 +1,77 @@
+/*
+ * @Description: 变量配置
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-22 17:45:12
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 17:58:21
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+// vus前缀
+$v: ".vus-";
+
+$color: #515355 !default;
+$color-primary: #409eff !default;
+$bg-color: #ffffff !default;
+$font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+  "Microsoft YaHei", "微软雅黑", Arial, sans-serif !default;
+$font-family-number: SourceCodeProRegular, sans-serif !default;
+$font-family-en: "Century Gothic", sans-serif !default;
+$font-size: .875rem !default;
+$font-weight: 400 !default;
+$line-height: 1.5 !default;
+
+// 字体大小
+$size-xs: .75rem !default;
+$size-sm: .875rem !default;
+$size-md: 1rem !default;
+$size-lg: 1.125rem !default;
+$size-xl: 1.25rem !default;
+
+// 标题字体
+$h1: 2.5rem !default;
+$h2: 2rem !default;
+$h3: 1.75rem !default;
+$h4: 1.5rem !default;
+$h5: 1.25rem !default;
+$h6: .9375rem !default;
+
+// 边框
+$border-color: #dcdfe6 !default;
+$border-color-light: #e4e7ed !default;
+$border-color-dark: #d4d7de !default;
+
+//媒体设备定义规范
+$xs: "xs" !default;
+$sm: "sm" !default;
+$md: "md" !default;
+$lg: "lg" !default;
+// $xl: 'xl' !default;
+
+//@media
+$media-min-width: (
+  $xs: 576px,
+  $sm: 768px,
+  $md: 1024px,
+  $lg: 1280px,
+  // $xl: 1920px
+) !default;
+
+// 颜色
+$colors: () !default;
+$colors: map-merge(
+  (
+    "primary": #409eff,
+    "success": #67c23a,
+    "warning": #e6a23c,
+    "danger": #d54,
+    "info": slategray,
+    "error": #f00,
+    "dark": #333,
+    "light": #ccc,
+    "white": #fff,
+    "black": black,
+  ),
+  $colors
+);

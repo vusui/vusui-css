@@ -1,0 +1,11 @@
+/*
+ * @Description: 颜色样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 17:31:18
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 17:31:36
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@charset "UTF-8";.vus-color--primary{color:#409eff}.vus-color--success{color:#67c23a}.vus-color--warning{color:#e6a23c}.vus-color--danger{color:#d54}.vus-color--info{color:#708090}.vus-color--error{color:red}.vus-color--dark{color:#333}.vus-color--light{color:#ccc}.vus-color--white{color:#fff}.vus-color--black{color:#000}.vus-bg--primary{background-color:#409eff}.vus-bg--success{background-color:#67c23a}.vus-bg--warning{background-color:#e6a23c}.vus-bg--danger{background-color:#d54}.vus-bg--info{background-color:#708090}.vus-bg--error{background-color:red}.vus-bg--dark{background-color:#333}.vus-bg--light{background-color:#ccc}.vus-bg--white{background-color:#fff}.vus-bg--black{background-color:#000}.vus-border--primary{border-color:#409eff}.vus-border--success{border-color:#67c23a}.vus-border--warning{border-color:#e6a23c}.vus-border--danger{border-color:#d54}.vus-border--info{border-color:#708090}.vus-border--error{border-color:red}.vus-border--dark{border-color:#333}.vus-border--light{border-color:#ccc}.vus-border--white{border-color:#fff}.vus-border--black{border-color:#000}.vus-rgba--black-01{background-color:#0000001a!important}.vus-rgba--white-01{background-color:#ffffff1a!important}.vus-rgba--black-02{background-color:#0003!important}.vus-rgba--white-02{background-color:#fff3!important}.vus-rgba--black-03{background-color:#0000004d!important}.vus-rgba--white-03{background-color:#ffffff4d!important}.vus-rgba--black-04{background-color:#0006!important}.vus-rgba--white-04{background-color:#fff6!important}.vus-rgba--black-05{background-color:#00000080!important}.vus-rgba--white-05{background-color:#ffffff80!important}.vus-rgba--black-06{background-color:#0009!important}.vus-rgba--white-06{background-color:#fff9!important}.vus-rgba--black-07{background-color:#000000b3!important}.vus-rgba--white-07{background-color:#ffffffb3!important}.vus-rgba--black-08{background-color:#000c!important}.vus-rgba--white-08{background-color:#fffc!important}.vus-rgba--black-09{background-color:#000000e6!important}.vus-rgba--white-09{background-color:#ffffffe6!important}

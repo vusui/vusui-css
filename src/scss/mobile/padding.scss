@@ -1,0 +1,32 @@
+/*
+ * @Description: 内补填充(padding)
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:02:14
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 17:41:53
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+@for $i from 0 through 50 {
+  #{$v}pa-#{$i} {
+    padding: #{math.div($i, 16)}rem;
+  }
+}
+
+@for $i from 0 through 50 {
+  #{$v}pl-#{$i} {
+    padding-left: #{math.div($i, 16)}rem;
+  }
+  #{$v}pt-#{$i} {
+    padding-top: #{math.div($i, 16)}rem;
+  }
+  #{$v}pr-#{$i} {
+    padding-right: #{math.div($i, 16)}rem;
+  }
+  #{$v}pb-#{$i} {
+    padding-bottom: #{math.div($i, 16)}rem;
+  }
+}

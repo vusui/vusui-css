@@ -1,0 +1,11 @@
+/*
+ * @Description: 布局样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 18:01:04
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 18:01:29
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@charset "UTF-8";.vus-html-unscrollable,.vus-html-unscrollable body{height:100%;overflow:hidden}.vus-wrapper{width:100%;position:relative;overflow-x:hidden;overflow-y:auto}.vus-container{width:100%;margin:0 auto;padding:0 10px}.vus-mx-auto{margin-left:auto;margin-right:auto}.vus-full,.vus-full-flex{width:100%;display:block}.vus-full-flex{display:flex}@media (min-width: 576px){.vus-container{max-width:550px}}@media (min-width: 768px){.vus-container{max-width:740px}}@media (min-width: 1024px){.vus-container{max-width:1000px}}@media (min-width: 1280px){.vus-container{max-width:1200px}}

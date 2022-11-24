@@ -1,0 +1,165 @@
+/*
+ * @Description: flex盒子样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 11:08:26
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 17:41:25
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+#{$v}box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  &.inline {
+    display: inline-flex;
+  }
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+  &.wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  &.row-reverse {
+    flex-direction: row-reverse;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.column-reverse {
+    flex-direction: column-reverse;
+  }
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.items-start {
+    align-items: flex-start;
+  }
+  &.items-end {
+    align-items: flex-end;
+  }
+  &.items-center {
+    align-items: center;
+  }
+}
+
+#{$v}col,
+#{$v}flex,
+[class*=" vus-col-"],
+[class^="vus-col-"],
+[class*=" vus-flex-"],
+[class^="vus-flex-"] {
+  width: 100%;
+  min-height: 1px;
+  position: relative;
+}
+
+#{$v}col,
+#{$v}flex {
+  max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  &-auto {
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+  }
+}
+
+// flex
+@for $i from 1 through 24 {
+  #{$v}col-#{$i} {
+    max-width: math.div(100%, 24) * $i;
+    flex: 0 0 math.div(100%, 24) * $i;
+  }
+  #{$v}flex-#{$i} {
+    max-width: math.div(100%, $i);
+    flex: 0 0 math.div(100%, $i);
+  }
+}
+
+// 列偏移
+@for $i from 1 through 23 {
+  #{$v}offset-#{$i} {
+    margin-left: math.div(100%, 24) * $i;
+  }
+}
+
+// 间隔
+#{$v}box {
+  @for $i from 1 through 20 {
+    // 左右间隔
+    &.lr-#{$i} {
+      margin-left: -#{math.div($i, 16)}rem;
+      margin-right: -#{math.div($i, 16)}rem;
+      #{$v}col,
+      #{$v}flex,
+      [class*=" vus-col-"],
+      [class^="vus-col-"],
+      [class*=" vus-flex-"],
+      [class^="vus-flex-"] {
+        padding-left: #{math.div($i, 16)}rem;
+        padding-right: #{math.div($i, 16)}rem;
+      }
+    }
+    // 上下间隔
+    &.tb-#{$i} {
+      margin-top: -#{math.div($i, 16)}rem;
+      margin-bottom: -#{math.div($i, 16)}rem;
+      #{$v}col,
+      #{$v}flex,
+      [class*=" vus-col-"],
+      [class^="vus-col-"],
+      [class*=" vus-flex-"],
+      [class^="vus-flex-"] {
+        padding-top: #{math.div($i, 16)}rem;
+        padding-bottom: #{math.div($i, 16)}rem;
+      }
+    }
+  }
+
+  &.lr-0 {
+    margin-left: 0;
+    margin-right: 0;
+    #{$v}col,
+    #{$v}flex,
+    [class*=" vus-col-"],
+    [class^="vus-col-"],
+    [class*=" vus-flex-"],
+    [class^="vus-flex-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.tb-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+    #{$v}col,
+    #{$v}flex,
+    [class*=" vus-col-"],
+    [class^="vus-col-"],
+    [class*=" vus-flex-"],
+    [class^="vus-flex-"] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

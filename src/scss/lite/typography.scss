@@ -1,0 +1,327 @@
+/*
+ * @Description: 文本排版
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 09:34:44
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 17:52:31
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+/*------------------------------
+ * 标题h1,h2,h3,h4,h5,h6
+ *------------------------------
+*/
+#{$v}h1,
+#{$v}h2,
+#{$v}h3,
+#{$v}h4,
+#{$v}h5,
+#{$v}h6 {
+  line-height: 1.3;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 700;
+}
+@each $key, $val in (h1: $h1, h2: $h2, h3: $h3, h4: $h4, h5: $h5, h6: $h6) {
+  #{$v}#{$key} {
+    font-size: $val;
+  }
+}
+
+/*------------------------------
+ * 字体大小
+ *------------------------------
+*/
+$numberList: 10 12 13 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50;
+@for $i from 1 through length($numberList) {
+  #{$v}fs-#{nth($numberList, $i)} {
+    font-size: #{math.div(nth($numberList, $i), 16)}rem;
+  }
+}
+
+/*------------------------------
+ * 文本对齐
+ *------------------------------
+*/
+$textList: left right center justify;
+@for $i from 1 through length($textList) {
+  #{$v}text-#{nth($textList, $i)} {
+    text-align: #{nth($textList, $i)};
+  }
+}
+// 缩进与间距
+#{$v}text-indent {
+  text-indent: 2em;
+}
+#{$v}text-spacing {
+  letter-spacing: 0.125rem;
+}
+
+/*------------------------------
+ * 字母大小写转换
+ *------------------------------
+*/
+$textList2: lowercase uppercase capitalize;
+@for $i from 1 through length($textList2) {
+  #{$v}text-#{nth($textList2, $i)} {
+    text-transform: #{nth($textList2, $i)};
+  }
+}
+
+/*------------------------------
+ * 文本修饰线
+ *------------------------------
+*/
+#{$v}text-through {
+  text-decoration: line-through;
+}
+#{$v}text-overline {
+  text-decoration: overline;
+}
+#{$v}text-underline {
+  text-decoration: underline;
+}
+
+/*------------------------------
+ * 文本换行
+ *------------------------------
+*/
+// 不换行
+#{$v}text-nowrap {
+  white-space: nowrap;
+}
+// 以字母作为换行依据
+#{$v}text-letter {
+  word-break: break-all;
+}
+// 以单词作为换行依据
+#{$v}text-word {
+  word-wrap: break-word;
+}
+// 文本截断
+#{$v}text-ellipsis {
+  @include ellipsis();
+}
+
+/*------------------------------
+ * 文本换行截断
+ *------------------------------
+*/
+#{$v}text-ellipsis {
+  &.line-2,
+  &.line-3 {
+    display: -webkit-box;
+    white-space: normal;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+  }
+  &.line-2 {
+    -webkit-line-clamp: 2;
+  }
+  &.line-3 {
+    -webkit-line-clamp: 3;
+  }
+}
+
+/*------------------------------
+ * 文本着重
+ *------------------------------
+*/
+$textList3: 100 200 300 400 500 600 700 normal;
+@for $i from 1 through length($textList3) {
+  #{$v}fw-#{nth($textList3, $i)} {
+    font-weight: #{nth($textList3, $i)};
+  }
+}
+
+/*------------------------------
+ * 文本斜体
+ *------------------------------
+*/
+#{$v}fs-italic {
+  font-style: italic;
+}
+// 重置字体
+#{$v}fs-normal {
+  font-style: normal;
+}
+
+/*------------------------------
+ * 文本行高
+ *------------------------------
+*/
+@each $key,
+  $val
+    in (
+      "inherit": inherit,
+      "1": 1,
+      "1-1": 1.1,
+      "1-2": 1.2,
+      "1-3": 1.3,
+      "1-4": 1.4,
+      "1-5": 1.5,
+      "1-6": 1.6,
+      "1-7": 1.7,
+      "1-8": 1.8,
+      "1-9": 1.9,
+      "2": 2
+    )
+{
+  #{$v}lh-#{$key} {
+    line-height: #{$val};
+  }
+}
+
+/*------------------------------
+ * overflow display
+ *------------------------------
+*/
+#{$v}hidden {
+  overflow: hidden;
+}
+#{$v}hidden-y {
+  overflow-y: hidden;
+}
+#{$v}hidden-y-auto {
+  overflow-y: auto;
+}
+#{$v}hidden-x {
+  overflow-x: hidden;
+}
+#{$v}hidden-x-auto {
+  overflow-x: auto;
+}
+#{$v}hidden-auto {
+  overflow: auto;
+}
+#{$v}hidden-auto,
+#{$v}hidden-x-auto,
+#{$v}hidden-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+#{$v}visible {
+  overflow: visible;
+}
+#{$v}inline {
+  display: inline;
+}
+#{$v}inline-block {
+  display: inline-block;
+}
+#{$v}align-top {
+  vertical-align: top;
+}
+#{$v}align-middle {
+  vertical-align: middle;
+}
+#{$v}align-bottom {
+  vertical-align: bottom;
+}
+#{$v}align-baseline {
+  vertical-align: baseline;
+}
+#{$v}block,
+#{$v}show {
+  display: block;
+}
+#{$v}hide {
+  display: none;
+}
+#{$v}pe-auto {
+  pointer-events: auto;
+}
+#{$v}pe-none {
+  pointer-events: none;
+}
+#{$v}pe-all {
+  pointer-events: all;
+}
+
+/*------------------------------
+ * 浮动
+ *------------------------------
+*/
+#{$v}fl {
+  float: left;
+}
+#{$v}fr {
+  float: right;
+}
+#{$v}fn {
+  float: none;
+}
+
+/*------------------------------
+ * 透明度
+ *------------------------------
+*/
+@each $key,
+  $val
+    in (
+      "0": 0,
+      "01": 0.1,
+      "02": 0.2,
+      "03": 0.3,
+      "04": 0.4,
+      "05": 0.5,
+      "06": 0.6,
+      "07": 0.7,
+      "08": 0.8,
+      "09": 0.9,
+      "1": 1
+    )
+{
+  #{$v}lh-#{$key} {
+    opacity: #{$val};
+  }
+}
+
+/*------------------------------
+ * 鼠标状态
+ *------------------------------
+*/
+#{$v}cursor {
+  // 默认
+  &-default {
+    cursor: default;
+  }
+  // 点击
+  &-pointer {
+    cursor: pointer;
+  }
+}
+
+/*------------------------------
+ * 清除浮动
+ *------------------------------
+*/
+#{$v}clearfix {
+  @include clearfix();
+}
+
+/*------------------------------
+ * 媒体设备
+ *------------------------------
+*/
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    #{$v}show-#{$device} {
+      display: block;
+    }
+    #{$v}hide-#{$device} {
+      display: none;
+    }
+    #{$v}fl-#{$device} {
+      float: left;
+    }
+    #{$v}fr-#{$device} {
+      float: right;
+    }
+    #{$v}fn-#{$device} {
+      float: none;
+    }
+  }
+}

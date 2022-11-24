@@ -1,0 +1,31 @@
+/*
+ * @Description: 阴影样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 16:27:07
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 16:44:36
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+/*------------------------------
+ * 元素阴影
+ *------------------------------
+*/
+@for $i from 1 through 20 {
+  #{$v}bs-#{$i} {
+    box-shadow: 0 0 #{math.div($i, 16)}rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+/*------------------------------
+ * 文本阴影
+ *------------------------------
+*/
+@for $i from 1 through 5 {
+  #{$v}ts-#{$i} {
+    text-shadow: 0 0.0625rem #{math.div($i, 16)}rem rgba(0, 0, 0, 0.3);
+  }
+}

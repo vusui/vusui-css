@@ -1,0 +1,58 @@
+/*
+ * @Description: 外补填充(margin)
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 14:55:10
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 15:01:46
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+@for $i from 0 through 50 {
+  #{$v}ma-#{$i} {
+    margin: #{math.div($i, 16)}rem;
+  }
+}
+
+@for $i from 0 through 50 {
+  #{$v}ml-#{$i} {
+    margin-left: #{math.div($i, 16)}rem;
+  }
+  #{$v}mt-#{$i} {
+    margin-top: #{math.div($i, 16)}rem;
+  }
+  #{$v}mr-#{$i} {
+    margin-right: #{math.div($i, 16)}rem;
+  }
+  #{$v}mb-#{$i} {
+    margin-bottom: #{math.div($i, 16)}rem;
+  }
+}
+
+// 媒体设备
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @for $i from 1 through 50 {
+      #{$v}ma-#{$device}-#{$i} {
+        margin: #{math.div($i, 16)}rem;
+      }
+    }
+
+    @for $i from 1 through 50 {
+      #{$v}ml-#{$device}-#{$i} {
+        margin-left: #{math.div($i, 16)}rem;
+      }
+      #{$v}mt-#{$device}-#{$i} {
+        margin-top: #{math.div($i, 16)}rem;
+      }
+      #{$v}mr-#{$device}-#{$i} {
+        margin-right: #{math.div($i, 16)}rem;
+      }
+      #{$v}mb-#{$device}-#{$i} {
+        margin-bottom: #{math.div($i, 16)}rem;
+      }
+    }
+  }
+}

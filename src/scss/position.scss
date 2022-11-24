@@ -1,0 +1,134 @@
+/*
+ * @Description: 位置定位样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:22:53
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-23 15:29:23
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+#{$v}fixed {
+  position: fixed;
+}
+#{$v}absolute {
+  position: absolute;
+}
+#{$v}relative {
+  position: relative;
+}
+
+/*------------------------------
+ * 位置距离
+ *------------------------------
+*/
+@for $i from 0 through 100 {
+  #{$v}left-#{$i} {
+    left: #{math.div($i, 16)}rem;
+  }
+  #{$v}left--#{$i} {
+    left: -#{math.div($i, 16)}rem;
+  }
+  #{$v}top-#{$i} {
+    top: #{math.div($i, 16)}rem;
+  }
+  #{$v}top--#{$i} {
+    top: -#{math.div($i, 16)}rem;
+  }
+  #{$v}right-#{$i} {
+    right: #{math.div($i, 16)}rem;
+  }
+  #{$v}right--#{$i} {
+    right: -#{math.div($i, 16)}rem;
+  }
+  #{$v}bottom-#{$i} {
+    bottom: #{math.div($i, 16)}rem;
+  }
+  #{$v}bottom--#{$i} {
+    bottom: -#{math.div($i, 16)}rem;
+  }
+}
+
+/*------------------------------
+ * 百分比(percent)
+ *------------------------------
+*/
+$numberList2: 10 20 30 40 50 60 70 80 90 100;
+@for $i from 1 through length($numberList2) {
+  #{$v}left-p-#{nth($numberList2, $i)} {
+    left: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}left-p--#{nth($numberList2, $i)} {
+    left: -#{nth($numberList2, $i) * 1%};
+  }
+  #{$v}top-p-#{nth($numberList2, $i)} {
+    top: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}top-p--#{nth($numberList2, $i)} {
+    top: -#{nth($numberList2, $i) * 1%};
+  }
+  #{$v}right-p-#{nth($numberList2, $i)} {
+    right: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}right-p--#{nth($numberList2, $i)} {
+    right: -#{nth($numberList2, $i) * 1%};
+  }
+  #{$v}bottom-p-#{nth($numberList2, $i)} {
+    bottom: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}bottom-p--#{nth($numberList2, $i)} {
+    bottom: -#{nth($numberList2, $i) * 1%};
+  }
+}
+
+/*------------------------------
+ * 位置索引层
+ *------------------------------
+*/
+$numberList3: -1 1 2 3 4 5 6 7 8 9 10 100 101 102 103 104 105 106 107 108 109
+  1000 1001 1002 1003 1004 1005 1006 1007 1008 1009 99999;
+@for $i from 1 through length($numberList3) {
+  #{$v}index-#{nth($numberList3, $i)} {
+    z-index: #{nth($numberList3, $i)};
+  }
+}
+
+// 媒体设备
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @for $i from 1 through 100 {
+      #{$v}left-#{$device}-#{$i} {
+        left: #{math.div($i, 16)}rem;
+      }
+      #{$v}left-#{$device}--#{$i} {
+        left: -#{math.div($i, 16)}rem;
+      }
+      #{$v}top-#{$device}-#{$i} {
+        top: #{math.div($i, 16)}rem;
+      }
+      #{$v}top-#{$device}--#{$i} {
+        top: -#{math.div($i, 16)}rem;
+      }
+      #{$v}right-#{$device}-#{$i} {
+        right: #{math.div($i, 16)}rem;
+      }
+      #{$v}right-#{$device}--#{$i} {
+        right: -#{math.div($i, 16)}rem;
+      }
+      #{$v}bottom-#{$device}-#{$i} {
+        bottom: #{math.div($i, 16)}rem;
+      }
+      #{$v}bottom-#{$device}--#{$i} {
+        bottom: -#{math.div($i, 16)}rem;
+      }
+    }
+
+    @for $i from 1 through length($numberList3) {
+      #{$v}index-#{$device}-#{nth($numberList3, $i)} {
+        z-index: #{nth($numberList3, $i)};
+      }
+    }
+  }
+}

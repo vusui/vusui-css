@@ -1,0 +1,34 @@
+{
+  "name": "@vusui/css",
+  "version": "7.0.0",
+  "private": false,
+  "description": "免除开发者繁复的手写CSS样式。",
+  "main": "lib/style.css",
+  "module": "lib/style.css",
+  "unpkg": "lib/style.css",
+  "jsdelivr": "lib/style.css",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "@vusui/css",
+    "vusui-css",
+    "vusui",
+    "css",
+    "css样式库"
+  ],
+  "author": "linpan(45650368@qq.com)",
+  "license": "MIT",
+  "homepage": "https://vusui.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vusui/vusui-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vusui/vusui-css/issues"
+  }
+}
