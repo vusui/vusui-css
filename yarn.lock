@@ -418,10 +418,15 @@
   resolved "https://registry.npmmirror.com/@vue/tsconfig/-/tsconfig-0.1.3.tgz#4a61dbd29783d01ddab504276dcf0c2b6988654f"
   integrity sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==
 
-"@vusui/css@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/@vusui/css/-/css-1.0.0.tgz#b7a1e5ad7a83c13694035be56dffea8195058120"
-  integrity sha512-XNQ8HUKu8XC6bcBuFJh1oCkF/T8I3sXmDv+1dJjTwqOyla8GLW8qqO/2kLoETjdv5RKporwJ2Q4e6sbsF/rx1A==
+"@vusui/css@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.npmmirror.com/@vusui/css/-/css-7.0.0.tgz#1c6b03925d6f73bd6aca3fa5416acac960b5e6cf"
+  integrity sha512-JqKq7T2JXFAyfjUYk1mDFyCEwbnJaGxINNOgf4mX06uWUieEJfWEhlLyMPIVdY1wyfvbNaVT6HjKDmtJC5rVQA==
+
+"@vusui/icon@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmmirror.com/@vusui/icon/-/icon-5.0.0.tgz#d5b6c9fa32c91febcabbcd44c6844e7d119d43d8"
+  integrity sha512-0NLf3khXZYlD7x060HKUuRGthTVHIwIk0ScUffWsMoKzxDBMRfXuxVetFuy8oBWzysTxnhLENAib6lCQpj4bAQ==
 
 abab@^2.0.6:
   version "2.0.6"
