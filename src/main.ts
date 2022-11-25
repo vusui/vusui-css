@@ -1,9 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-// import "./scss/index.scss";
+import "./scss/index.scss";
+// import "./scss/mobile/index.scss";
+// import "./scss/lite/index.scss";
 
-import "@vusui/css/lib/style.css";
+// import "@vusui/css/lib/style.css";
 
 // import "@vusui/icon/font/index.css";
 

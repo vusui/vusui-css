@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 15:22:53
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-23 18:08:32
+ * @LastEditTime: 2022-11-25 15:24:11
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -24,19 +24,47 @@
  * 位置距离
  *------------------------------
 */
-@for $i from 0 through 50 {
-  #{$v}left-#{$i} {
+$numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
+36 38 40 42 44 45 46 48 50;
+
+@for $i from 1 through length($numberList) {
+  #{$v}left-#{nth($numberList, $i)} {
     left: #{math.div($i, 16)}rem;
   }
-  #{$v}top-#{$i} {
+  #{$v}left--#{nth($numberList, $i)} {
+    left: -#{math.div($i, 16)}rem;
+  }
+  #{$v}top-#{nth($numberList, $i)} {
     top: #{math.div($i, 16)}rem;
   }
-  #{$v}right-#{$i} {
+  #{$v}top--#{nth($numberList, $i)} {
+    top: -#{math.div($i, 16)}rem;
+  }
+  #{$v}right-#{nth($numberList, $i)} {
     right: #{math.div($i, 16)}rem;
   }
-  #{$v}bottom-#{$i} {
+  #{$v}right--#{nth($numberList, $i)} {
+    right: -#{math.div($i, 16)}rem;
+  }
+  #{$v}bottom-#{nth($numberList, $i)} {
     bottom: #{math.div($i, 16)}rem;
   }
+  #{$v}bottom--#{nth($numberList, $i)} {
+    bottom: -#{math.div($i, 16)}rem;
+  }
+}
+
+#{$v}left-0 {
+  left: 0;
+}
+#{$v}top-0 {
+  top: 0;
+}
+#{$v}right-0 {
+  right: 0;
+}
+#{$v}bottom-0 {
+  bottom: 0;
 }
 
 /*------------------------------
@@ -48,14 +76,26 @@ $numberList2: 50 100;
   #{$v}left-p-#{nth($numberList2, $i)} {
     left: #{nth($numberList2, $i) * 1%};
   }
+  #{$v}left-p--#{nth($numberList2, $i)} {
+    left: -#{nth($numberList2, $i) * 1%};
+  }
   #{$v}top-p-#{nth($numberList2, $i)} {
     top: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}top-p--#{nth($numberList2, $i)} {
+    top: -#{nth($numberList2, $i) * 1%};
   }
   #{$v}right-p-#{nth($numberList2, $i)} {
     right: #{nth($numberList2, $i) * 1%};
   }
+  #{$v}right-p--#{nth($numberList2, $i)} {
+    right: -#{nth($numberList2, $i) * 1%};
+  }
   #{$v}bottom-p-#{nth($numberList2, $i)} {
     bottom: #{nth($numberList2, $i) * 1%};
+  }
+  #{$v}bottom-p--#{nth($numberList2, $i)} {
+    bottom: -#{nth($numberList2, $i) * 1%};
   }
 }
 
@@ -63,7 +103,7 @@ $numberList2: 50 100;
  * 位置索引层
  *------------------------------
 */
-$numberList3: -1 1 2 3 4 5 6 7 8 9 10;
+$numberList3: -1 0 1 2 3 4 5 6 7 8 9 10;
 @for $i from 1 through length($numberList3) {
   #{$v}index-#{nth($numberList3, $i)} {
     z-index: #{nth($numberList3, $i)};
@@ -73,19 +113,44 @@ $numberList3: -1 1 2 3 4 5 6 7 8 9 10;
 // 媒体设备
 @each $device, $value in $media-min-width {
   @include media-min($device) {
-    @for $i from 1 through 50 {
-      #{$v}left-#{$device}-#{$i} {
+    @for $i from 1 through length($numberList) {
+      #{$v}left-#{$device}-#{nth($numberList, $i)} {
         left: #{math.div($i, 16)}rem;
       }
-      #{$v}top-#{$device}-#{$i} {
+      #{$v}left-#{$device}--#{nth($numberList, $i)} {
+        left: -#{math.div($i, 16)}rem;
+      }
+      #{$v}top-#{$device}-#{nth($numberList, $i)} {
         top: #{math.div($i, 16)}rem;
       }
-      #{$v}right-#{$device}-#{$i} {
+      #{$v}top-#{$device}--#{nth($numberList, $i)} {
+        top: -#{math.div($i, 16)}rem;
+      }
+      #{$v}right-#{$device}-#{nth($numberList, $i)} {
         right: #{math.div($i, 16)}rem;
       }
-      #{$v}bottom-#{$device}-#{$i} {
+      #{$v}right-#{$device}--#{nth($numberList, $i)} {
+        right: -#{math.div($i, 16)}rem;
+      }
+      #{$v}bottom-#{$device}-#{nth($numberList, $i)} {
         bottom: #{math.div($i, 16)}rem;
       }
+      #{$v}bottom-#{$device}--#{nth($numberList, $i)} {
+        bottom: -#{math.div($i, 16)}rem;
+      }
+    }
+
+    #{$v}left-#{$device}-0 {
+      left: 0;
+    }
+    #{$v}top-#{$device}-0 {
+      top: 0;
+    }
+    #{$v}right-#{$device}-0 {
+      right: 0;
+    }
+    #{$v}bottom-#{$device}-0 {
+      bottom: 0;
     }
 
     @for $i from 1 through length($numberList3) {

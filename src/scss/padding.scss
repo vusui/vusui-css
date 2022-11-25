@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 15:02:14
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-24 18:32:05
+ * @LastEditTime: 2022-11-25 10:03:17
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -17,7 +17,7 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
 
 @for $i from 1 through length($numberList) {
   #{$v}pa-#{nth($numberList, $i)} {
-    padding: #{math.div($i, 16)}rem;
+    padding: #{math.div(nth($numberList, $i), 16)}rem;
   }
 }
 

@@ -288,26 +288,26 @@ $textList3: 100 200 300 400 500 600 700 normal;
   @include clearfix();
 }
 
-// /*------------------------------
-//  * 媒体设备
-//  *------------------------------
-// */
-// @each $device, $value in $media-min-width {
-//   @include media-min($device) {
-//     #{$v}show-#{$device} {
-//       display: block;
-//     }
-//     #{$v}hide-#{$device} {
-//       display: none;
-//     }
-//     #{$v}fl-#{$device} {
-//       float: left;
-//     }
-//     #{$v}fr-#{$device} {
-//       float: right;
-//     }
-//     #{$v}fn-#{$device} {
-//       float: none;
-//     }
-//   }
-// }
+/*------------------------------
+ * 媒体设备
+ *------------------------------
+*/
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    #{$v}show-#{$device} {
+      display: block;
+    }
+    #{$v}hide-#{$device} {
+      display: none;
+    }
+    #{$v}fl-#{$device} {
+      float: left;
+    }
+    #{$v}fr-#{$device} {
+      float: right;
+    }
+    #{$v}fn-#{$device} {
+      float: none;
+    }
+  }
+}

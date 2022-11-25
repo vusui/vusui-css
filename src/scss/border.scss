@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 14:26:13
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-23 17:11:58
+ * @LastEditTime: 2022-11-25 09:53:01
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -19,7 +19,7 @@
 }
 
 // 边框大小
-@for $i from 0 through 15 {
+@for $i from 0 through 20 {
   @if $i != 0 {
     #{$v}border-#{$i} {
       border-width: #{math.div($i, 16)}rem;
@@ -58,7 +58,7 @@
 // 媒体设备
 @each $device, $value in $media-min-width {
   @include media-min($device) {
-    @for $i from 0 through 15 {
+    @for $i from 0 through 20 {
       @if $i != 0 {
         #{$v}border-#{$device}-#{$i} {
           border-width: #{math.div($i, 16)}rem;
