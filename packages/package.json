@@ -1,6 +1,6 @@
 {
   "name": "@vusui/css",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "private": false,
   "description": "免除开发者繁复的手写CSS样式。",
   "main": "lib/style.css",
@@ -19,7 +19,12 @@
     "vusui-css",
     "vusui",
     "css",
-    "css样式库"
+    "css3",
+    "scss",
+    "css样式库",
+    "前端",
+    "自适应",
+    "响应式"
   ],
   "author": "linpan(45650368@qq.com)",
   "license": "MIT",

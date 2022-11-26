@@ -2,8 +2,8 @@
  * @Description: 样式重置
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-22 17:56:57
- * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-25 16:52:23
+ * @LastEditors: vusui gophp@163.com
+ * @LastEditTime: 2022-11-26 22:21:48
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -36,6 +36,23 @@ a[href]:hover {
 a[href].underline:hover {
   text-decoration: underline;
 }
+div,
+article,
+aside,
+details,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
 b,
 strong {
   font-weight: 700;
@@ -54,6 +71,9 @@ audio:not([controls]) {
 }
 :focus {
   outline: 0;
+}
+[v-cloak] {
+  display: none !important;
 }
 ol,
 ul {
@@ -111,6 +131,9 @@ img {
   position: relative;
   border-style: none;
   will-change: transform;
+}
+svg:not(:root) {
+  overflow: hidden;
 }
 html {
   font-family: sans-serif;

@@ -12,15 +12,16 @@
 @import "../mixins";
 
 // all
-@import "reboot";
-@import "layout";
-@import "typography";
-@import "color";
-@import "shadow";
-@import "image";
-@import "rotate";
+@import "../reboot";
+@import "../layout";
+@import "../typography";
+@import "flex";
+@import "../color";
+@import "../shadow";
+@import "../image";
+@import "../rotate";
 @import "radius";
-@import "opacity";
+@import "../opacity";
 @import "position";
 @import "border";
 @import "width";
@@ -28,5 +29,4 @@
 @import "margin";
 @import "padding";
 @import "fontsize";
-@import "flex";
 @import "animation";
