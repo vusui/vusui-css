@@ -3,22 +3,22 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 09:44:42
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-23 10:59:50
+ * @LastEditTime: 2022-11-28 15:17:14
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
  */
 // 字符截止加省略号
 @mixin ellipsis {
-  overflow: hidden !important;
-  white-space: nowrap !important;
-  text-overflow: ellipsis !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 // 强制换行
 @mixin word-wrap {
-  word-break: break-all !important; //只对英文起作用，以字母作为换行依据。
-  word-wrap: break-word !important; //只对英文起作用，以单词作为换行依据。
+  word-break: break-all; //只对英文起作用，以字母作为换行依据。
+  word-wrap: break-word; //只对英文起作用，以单词作为换行依据。
 }
 
 // 清除浮动
