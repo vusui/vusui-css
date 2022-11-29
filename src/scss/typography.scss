@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 09:34:44
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-28 15:50:22
+ * @LastEditTime: 2022-11-29 15:28:26
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -241,6 +241,12 @@ $textList3: 100 200 300 400 500 600 700 normal;
 }
 #{$v}pe-all {
   pointer-events: all;
+}
+#{$v}border-box {
+  box-sizing: border-box;
+}
+#{$v}content-box {
+  box-sizing: content-box;
 }
 
 /*------------------------------
