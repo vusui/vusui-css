@@ -2,8 +2,8 @@
  * @Description: flex盒子样式
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 11:08:26
- * @LastEditors: vusui gophp@163.com
- * @LastEditTime: 2022-11-27 11:29:12
+ * @LastEditors: linp linp@epsoft.com.cn
+ * @LastEditTime: 2022-11-29 17:01:52
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -14,6 +14,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  box-sizing: border-box;
 
   &.inline {
     display: inline-flex;
@@ -68,6 +69,7 @@
   width: 100%;
   min-height: 1px;
   position: relative;
+  box-sizing: border-box;
 }
 
 #{$v}col,
