@@ -1,6 +1,6 @@
 # Vusui-css 样式库
 
-免除开发者繁复的手写CSS样式。
+免除开发者繁复的手写 CSS 样式。
 
 【[使用文档](https://www.vusui.com/css)】
 
@@ -23,27 +23,23 @@ $ pnpm install @vusui/css
 
 ```ts
 // main.ts
-import { createApp } from 'vue';
+import { createApp } from "vue";
 
 // 全部样式
-import '@vusui/css/lib/style.css';
+import "@vusui/css/lib/style.css";
 
 // 移动端专用样式(无自适应)
-import '@vusui/css/lib/mobile.css';
+import "@vusui/css/lib/mobile.css";
 
 // 精简版样式
-import '@vusui/css/lib/lite.css';
+import "@vusui/css/lib/lite.css";
 
 // 指定样式
-import '@vusui/css/lib/margin.css';
+import "@vusui/css/lib/margin.css";
 
 const app = createApp({});
 app.mount("#app");
 ```
-
-
-
-
 
 ## 浏览器直接引入
 
@@ -71,13 +67,24 @@ app.mount("#app");
 ```html
 <head>
   <!-- 引入全部样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@vusui/css/lib/style.css" />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/@vusui/css/lib/style.css"
+  />
   <!-- 引入移动端样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@vusui/css/lib/mobile.css" />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/@vusui/css/lib/mobile.css"
+  />
   <!-- 引入精简版样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@vusui/css/lib/lite.css" />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/@vusui/css/lib/lite.css"
+  />
   <!-- 引入指定样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@vusui/css/lib/flex.css" />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/@vusui/css/lib/flex.css"
+  />
 </head>
 ```
-

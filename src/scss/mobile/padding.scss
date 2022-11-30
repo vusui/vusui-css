@@ -17,22 +17,22 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
 
 @for $i from 1 through length($numberList) {
   #{$v}pa-#{nth($numberList, $i)} {
-    padding: #{math.div(nth($numberList, $i), 16)}rem;
+    padding: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 
 @for $i from 1 through length($numberList) {
   #{$v}pl-#{nth($numberList, $i)} {
-    padding-left: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-left: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pt-#{nth($numberList, $i)} {
-    padding-top: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-top: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pr-#{nth($numberList, $i)} {
-    padding-right: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-right: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pb-#{nth($numberList, $i)} {
-    padding-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 

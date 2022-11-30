@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 15:02:14
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-25 10:03:17
+ * @LastEditTime: 2022-11-30 14:40:31
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -17,22 +17,22 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
 
 @for $i from 1 through length($numberList) {
   #{$v}pa-#{nth($numberList, $i)} {
-    padding: #{math.div(nth($numberList, $i), 16)}rem;
+    padding: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 
 @for $i from 1 through length($numberList) {
   #{$v}pl-#{nth($numberList, $i)} {
-    padding-left: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-left: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pt-#{nth($numberList, $i)} {
-    padding-top: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-top: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pr-#{nth($numberList, $i)} {
-    padding-right: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-right: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}pb-#{nth($numberList, $i)} {
-    padding-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+    padding-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 
@@ -41,22 +41,22 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
   @include media-min($device) {
     @for $i from 1 through length($numberList) {
       #{$v}pa-#{$device}-#{nth($numberList, $i)} {
-        padding: #{math.div(nth($numberList, $i), 16)}rem;
+        padding: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
     }
 
     @for $i from 1 through length($numberList) {
       #{$v}pl-#{$device}-#{nth($numberList, $i)} {
-        padding-left: #{math.div(nth($numberList, $i), 16)}rem;
+        padding-left: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}pt-#{$device}-#{nth($numberList, $i)} {
-        padding-top: #{math.div(nth($numberList, $i), 16)}rem;
+        padding-top: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}pr-#{$device}-#{nth($numberList, $i)} {
-        padding-right: #{math.div(nth($numberList, $i), 16)}rem;
+        padding-right: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}pb-#{$device}-#{nth($numberList, $i)} {
-        padding-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+        padding-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
     }
   }

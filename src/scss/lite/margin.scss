@@ -15,22 +15,22 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
 
 @for $i from 1 through length($numberList) {
   #{$v}ma-#{nth($numberList, $i)} {
-    margin: #{math.div(nth($numberList, $i), 16)}rem;
+    margin: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 
 @for $i from 1 through length($numberList) {
   #{$v}ml-#{nth($numberList, $i)} {
-    margin-left: #{math.div(nth($numberList, $i), 16)}rem;
+    margin-left: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}mt-#{nth($numberList, $i)} {
-    margin-top: #{math.div(nth($numberList, $i), 16)}rem;
+    margin-top: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}mr-#{nth($numberList, $i)} {
-    margin-right: #{math.div(nth($numberList, $i), 16)}rem;
+    margin-right: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
   #{$v}mb-#{nth($numberList, $i)} {
-    margin-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+    margin-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
   }
 }
 
@@ -39,22 +39,22 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
   @include media-min($device) {
     @for $i from 1 through length($numberList) {
       #{$v}ma-#{$device}-#{nth($numberList, $i)} {
-        margin: #{math.div(nth($numberList, $i), 16)}rem;
+        margin: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
     }
 
     @for $i from 1 through length($numberList) {
       #{$v}ml-#{$device}-#{nth($numberList, $i)} {
-        margin-left: #{math.div(nth($numberList, $i), 16)}rem;
+        margin-left: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}mt-#{$device}-#{nth($numberList, $i)} {
-        margin-top: #{math.div(nth($numberList, $i), 16)}rem;
+        margin-top: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}mr-#{$device}-#{nth($numberList, $i)} {
-        margin-right: #{math.div(nth($numberList, $i), 16)}rem;
+        margin-right: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
       #{$v}mb-#{$device}-#{nth($numberList, $i)} {
-        margin-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+        margin-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
       }
     }
   }

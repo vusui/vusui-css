@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 14:36:17
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-25 15:10:21
+ * @LastEditTime: 2022-11-30 15:02:28
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -17,16 +17,16 @@
 $numberList: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100;
 @for $i from 1 through length($numberList) {
   #{$v}h-#{nth($numberList, $i)} {
-    height: #{nth($numberList, $i) * 1%};
+    height: #{nth($numberList, $i) * 1%} !important;
   }
   #{$v}h-min-#{nth($numberList, $i)} {
-    min-height: #{nth($numberList, $i) * 1%};
+    min-height: #{nth($numberList, $i) * 1%} !important;
   }
   #{$v}h-max-#{nth($numberList, $i)} {
-    max-height: #{nth($numberList, $i) * 1%};
+    max-height: #{nth($numberList, $i) * 1%} !important;
   }
   #{$v}vh-#{nth($numberList, $i)} {
-    height: #{nth($numberList, $i)}vh;
+    height: #{nth($numberList, $i)}vh !important;
   }
 }
 
@@ -40,19 +40,19 @@ $numberList2: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
   200 250 300 350 400 450 500 550 600 650 700 750;
 @for $i from 1 through length($numberList2) {
   #{$v}h-px-#{nth($numberList2, $i)} {
-    height: #{math.div(nth($numberList2, $i), 16)}rem;
+    height: #{math.div(nth($numberList2, $i), 16)}rem !important;
   }
   #{$v}h-min-px-#{nth($numberList2, $i)} {
-    min-height: #{math.div(nth($numberList2, $i), 16)}rem;
+    min-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
   }
   #{$v}h-max-px-#{nth($numberList2, $i)} {
-    max-height: #{math.div(nth($numberList2, $i), 16)}rem;
+    max-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
   }
   #{$v}h-calc-#{nth($numberList2, $i)} {
-    height: calc(100% - #{math.div(nth($numberList2, $i), 16)}rem);
+    height: calc(100% - #{math.div(nth($numberList2, $i), 16)}rem) !important;
   }
   #{$v}vh-calc-#{nth($numberList2, $i)} {
-    height: calc(100vh - #{math.div(nth($numberList2, $i), 16)}rem);
+    height: calc(100vh - #{math.div(nth($numberList2, $i), 16)}rem) !important;
   }
 }
 
@@ -98,14 +98,14 @@ $numberList2: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
  *------------------------------
 */
 #{$v}h-0 {
-  height: 0;
+  height: 0 !important;
 }
 #{$v}h-auto {
-  height: auto;
+  height: auto !important;
 }
 #{$v}h-min-auto {
-  min-height: auto;
+  min-height: auto !important;
 }
 #{$v}h-max-auto {
-  max-height: auto;
+  max-height: auto !important;
 }

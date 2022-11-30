@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 16:18:42
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-25 09:54:16
+ * @LastEditTime: 2022-11-30 14:37:16
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -14,7 +14,7 @@
 */
 @each $key, $val in $colors {
   #{$v}color--#{$key} {
-    color: $val;
+    color: $val !important;
   }
 }
 
@@ -24,7 +24,7 @@
 */
 @each $key, $val in $colors {
   #{$v}bg--#{$key} {
-    background-color: $val;
+    background-color: $val !important;
   }
 }
 
@@ -34,7 +34,7 @@
 */
 @each $key, $val in $colors {
   #{$v}border--#{$key} {
-    border-color: $val;
+    border-color: $val !important;
   }
 }
 

@@ -25,6 +25,6 @@
     )
 {
   #{$v}opacity-#{$key} {
-    opacity: #{$val};
+    opacity: #{$val} !important;
   }
 }
