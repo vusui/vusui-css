@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 16:27:07
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-25 15:03:50
+ * @LastEditTime: 2022-12-01 15:14:25
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -83,7 +83,7 @@ $numberList: 1 2 3 4 5 6 7 8 9 10 15 20 25 30;
   }
 }
 
-.vus-bs-none {
+#{$v}bs-none {
   text-shadow: none;
 }
 
@@ -133,6 +133,6 @@ $numberList2: 1 2 3 4 5;
   }
 }
 
-.vus-ts-none {
+#{$v}ts-none {
   text-shadow: none;
 }

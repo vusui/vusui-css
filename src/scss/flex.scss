@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 11:08:26
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-11-29 17:01:52
+ * @LastEditTime: 2022-12-01 15:13:35
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -62,10 +62,10 @@
 
 #{$v}col,
 #{$v}flex,
-[class*=" vus-col-"],
-[class^="vus-col-"],
-[class*=" vus-flex-"],
-[class^="vus-flex-"] {
+[class*=" #{$v2}col-"],
+[class^="#{$v2}col-"],
+[class*=" #{$v2}flex-"],
+[class^="#{$v2}flex-"] {
   width: 100%;
   min-height: 1px;
   position: relative;
@@ -113,10 +113,10 @@
       margin-right: -#{math.div($i, 16)}rem;
       > #{$v}col,
       > #{$v}flex,
-      > [class*=" vus-col-"],
-      > [class^="vus-col-"],
-      > [class*=" vus-flex-"],
-      > [class^="vus-flex-"] {
+      > [class*=" #{$v2}col-"],
+      > [class^="#{$v2}col-"],
+      > [class*=" #{$v2}flex-"],
+      > [class^="#{$v2}flex-"] {
         padding-left: #{math.div($i, 16)}rem;
         padding-right: #{math.div($i, 16)}rem;
       }
@@ -127,10 +127,10 @@
       margin-bottom: -#{math.div($i, 16)}rem;
       > #{$v}col,
       > #{$v}flex,
-      > [class*=" vus-col-"],
-      > [class^="vus-col-"],
-      > [class*=" vus-flex-"],
-      > [class^="vus-flex-"] {
+      > [class*=" #{$v2}col-"],
+      > [class^="#{$v2}col-"],
+      > [class*=" #{$v2}flex-"],
+      > [class^="#{$v2}flex-"] {
         padding-top: #{math.div($i, 16)}rem;
         padding-bottom: #{math.div($i, 16)}rem;
       }
@@ -142,10 +142,10 @@
     margin-right: 0;
     > #{$v}col,
     > #{$v}flex,
-    > [class*=" vus-col-"],
-    > [class^="vus-col-"],
-    > [class*=" vus-flex-"],
-    > [class^="vus-flex-"] {
+    > [class*=" #{$v2}col-"],
+    > [class^="#{$v2}col-"],
+    > [class*=" #{$v2}flex-"],
+    > [class^="#{$v2}flex-"] {
       padding-left: 0;
       padding-right: 0;
     }
@@ -156,10 +156,10 @@
     margin-bottom: 0;
     > #{$v}col,
     > #{$v}flex,
-    > [class*=" vus-col-"],
-    > [class^="vus-col-"],
-    > [class*=" vus-flex-"],
-    > [class^="vus-flex-"] {
+    > [class*=" #{$v2}col-"],
+    > [class^="#{$v2}col-"],
+    > [class*=" #{$v2}flex-"],
+    > [class^="#{$v2}flex-"] {
       padding-top: 0;
       padding-bottom: 0;
     }
@@ -171,10 +171,10 @@
   @include media-min($device) {
     #{$v}col-#{$device},
     #{$v}flex-#{$device},
-    [class*=" vus-col-#{$device}-"],
-    [class^="vus-col-#{$device}-"],
-    [class*=" vus-flex-#{$device}-"],
-    [class^="vus-flex-#{$device}-"] {
+    [class*=" #{$v2}col-#{$device}-"],
+    [class^="#{$v2}col-#{$device}-"],
+    [class*=" #{$v2}flex-#{$device}-"],
+    [class^="#{$v2}flex-#{$device}-"] {
       width: 100%;
       min-height: 1px;
       position: relative;
@@ -221,10 +221,10 @@
           margin-right: -#{math.div($i, 16)}rem;
           > #{$v}col-#{$device},
           > #{$v}flex-#{$device},
-          > [class*=" vus-col-#{$device}-"],
-          > [class^="vus-col-#{$device}-"],
-          > [class*=" vus-flex-#{$device}-"],
-          > [class^="vus-flex-#{$device}-"] {
+          > [class*=" #{$v2}col-#{$device}-"],
+          > [class^="#{$v2}col-#{$device}-"],
+          > [class*=" #{$v2}flex-#{$device}-"],
+          > [class^="#{$v2}flex-#{$device}-"] {
             padding-left: #{math.div($i, 16)}rem;
             padding-right: #{math.div($i, 16)}rem;
           }
@@ -235,10 +235,10 @@
           margin-bottom: -#{math.div($i, 16)}rem;
           > #{$v}col-#{$device},
           > #{$v}flex-#{$device},
-          > [class*=" vus-col-#{$device}-"],
-          > [class^="vus-col-#{$device}-"],
-          > [class*=" vus-flex-#{$device}-"],
-          > [class^="vus-flex-#{$device}-"] {
+          > [class*=" #{$v2}col-#{$device}-"],
+          > [class^="#{$v2}col-#{$device}-"],
+          > [class*=" #{$v2}flex-#{$device}-"],
+          > [class^="#{$v2}flex-#{$device}-"] {
             padding-top: #{math.div($i, 16)}rem;
             padding-bottom: #{math.div($i, 16)}rem;
           }
@@ -250,10 +250,10 @@
         margin-right: 0;
         > #{$v}col-#{$device},
         > #{$v}flex-#{$device},
-        > [class*=" vus-col-#{$device}-"],
-        > [class^="vus-col-#{$device}-"],
-        > [class*=" vus-flex-#{$device}-"],
-        > [class^="vus-flex-#{$device}-"] {
+        > [class*=" #{$v2}col-#{$device}-"],
+        > [class^="#{$v2}col-#{$device}-"],
+        > [class*=" #{$v2}flex-#{$device}-"],
+        > [class^="#{$v2}flex-#{$device}-"] {
           padding-left: 0;
           padding-right: 0;
         }
@@ -264,10 +264,10 @@
         margin-bottom: 0;
         > #{$v}col-#{$device},
         > #{$v}flex-#{$device},
-        > [class*=" vus-col-#{$device}-"],
-        > [class^="vus-col-#{$device}-"],
-        > [class*=" vus-flex-#{$device}-"],
-        > [class^="vus-flex-#{$device}-"] {
+        > [class*=" #{$v2}col-#{$device}-"],
+        > [class^="#{$v2}col-#{$device}-"],
+        > [class*=" #{$v2}flex-#{$device}-"],
+        > [class^="#{$v2}flex-#{$device}-"] {
           padding-top: 0;
           padding-bottom: 0;
         }
