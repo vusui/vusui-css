@@ -1,6 +1,6 @@
 {
   "name": "@vusui/css",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "private": false,
   "description": "免除开发者繁复的手写CSS样式。",
   "main": "lib/style.css",

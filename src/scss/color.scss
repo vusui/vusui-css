@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 16:18:42
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-12-01 15:13:29
+ * @LastEditTime: 2022-12-01 17:00:05
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -62,4 +62,66 @@
   #{$v}bg--white-#{$key} {
     background-color: rgba(255, 255, 255, $val) !important;
   }
+}
+
+/*------------------------------
+ * 颜色混合模式
+ *------------------------------
+*/
+#{$v}mode-normal {
+  mix-blend-mode: normal; // 正常
+}
+#{$v}mode-multiply {
+  mix-blend-mode: multiply; // 正片叠底
+}
+#{$v}mode-screen {
+  mix-blend-mode: screen; // 滤色
+}
+#{$v}mode-overlay {
+  mix-blend-mode: overlay; // 叠加
+}
+#{$v}mode-darken {
+  mix-blend-mode: darken; // 变暗
+}
+#{$v}mode-lighten {
+  mix-blend-mode: lighten; // 变亮
+}
+#{$v}mode-color-dodge {
+  mix-blend-mode: color-dodge; // 颜色减淡
+}
+#{$v}mode-color-burn {
+  mix-blend-mode: color-burn; // 颜色加深
+}
+#{$v}mode-hard-light {
+  mix-blend-mode: hard-light; // 强光
+}
+#{$v}mode-soft-light {
+  mix-blend-mode: soft-light; // 柔光
+}
+#{$v}mode-difference {
+  mix-blend-mode: difference; // 差值
+}
+#{$v}mode-exclusion {
+  mix-blend-mode: exclusion; // 排除
+}
+#{$v}mode-hue {
+  mix-blend-mode: hue; // 色相
+}
+#{$v}mode-saturation {
+  mix-blend-mode: saturation; // 饱和度
+}
+#{$v}mode-color {
+  mix-blend-mode: color; // 颜色
+}
+#{$v}mode-luminosity {
+  mix-blend-mode: luminosity; // 亮度
+}
+#{$v}mode-initial {
+  mix-blend-mode: initial; // 默认
+}
+#{$v}mode-inherit {
+  mix-blend-mode: inherit; // 继承
+}
+#{$v}mode-unset {
+  mix-blend-mode: unset; // 还原
 }
