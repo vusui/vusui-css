@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 14:26:13
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-12-01 15:24:23
+ * @LastEditTime: 2022-12-01 15:50:38
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -24,32 +24,32 @@
     #{$v}border-#{$i} {
       border-width: #{math.div($i, 16)}rem;
     }
-    #{$v}bl-#{$i} {
+    #{$v}border-l-#{$i} {
       border-left-width: #{math.div($i, 16)}rem;
     }
-    #{$v}bt-#{$i} {
+    #{$v}border-t-#{$i} {
       border-top-width: #{math.div($i, 16)}rem;
     }
-    #{$v}br-#{$i} {
+    #{$v}border-r-#{$i} {
       border-right-width: #{math.div($i, 16)}rem;
     }
-    #{$v}bb-#{$i} {
+    #{$v}border-b-#{$i} {
       border-bottom-width: #{math.div($i, 16)}rem;
     }
   } @else {
     #{$v}border-0 {
       border: 0;
     }
-    #{$v}bl-0 {
+    #{$v}border-l-0 {
       border-left-width: 0;
     }
-    #{$v}bt-0 {
+    #{$v}border-t-0 {
       border-top-width: 0;
     }
-    #{$v}br-0 {
+    #{$v}border-r-0 {
       border-right-width: 0;
     }
-    #{$v}bb-0 {
+    #{$v}border-b-0 {
       border-bottom-width: 0;
     }
   }
@@ -63,32 +63,32 @@
 //         #{$v}border-#{$device}-#{$i} {
 //           border-width: #{math.div($i, 16)}rem;
 //         }
-//         #{$v}bl-#{$device}-#{$i} {
+//         #{$v}border-l-#{$device}-#{$i} {
 //           border-left-width: #{math.div($i, 16)}rem;
 //         }
-//         #{$v}bt-#{$device}-#{$i} {
+//         #{$v}border-t-#{$device}-#{$i} {
 //           border-top-width: #{math.div($i, 16)}rem;
 //         }
-//         #{$v}br-#{$device}-#{$i} {
+//         #{$v}border-r-#{$device}-#{$i} {
 //           border-right-width: #{math.div($i, 16)}rem;
 //         }
-//         #{$v}bb-#{$device}-#{$i} {
+//         #{$v}border-b-#{$device}-#{$i} {
 //           border-bottom-width: #{math.div($i, 16)}rem;
 //         }
 //       } @else {
 //         #{$v}border-#{$device}-0 {
 //           border: 0;
 //         }
-//         #{$v}bl-#{$device}-0 {
+//         #{$v}border-l-#{$device}-0 {
 //           border-left-width: 0;
 //         }
-//         #{$v}bt-#{$device}-0 {
+//         #{$v}border-t-#{$device}-0 {
 //           border-top-width: 0;
 //         }
-//         #{$v}br-#{$device}-0 {
+//         #{$v}border-r-#{$device}-0 {
 //           border-right-width: 0;
 //         }
-//         #{$v}bb-#{$device}-0 {
+//         #{$v}border-b-#{$device}-0 {
 //           border-bottom-width: 0;
 //         }
 //       }
