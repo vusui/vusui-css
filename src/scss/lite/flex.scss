@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-11 11:08:26
  * @LastEditors: linp linp@epsoft.com.cn
- * @LastEditTime: 2022-12-01 15:29:07
+ * @LastEditTime: 2022-12-02 09:13:50
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -58,6 +58,11 @@
   &.items-center {
     align-items: center;
   }
+}
+
+// 不缩小适应
+#{$v}flex-shrink {
+  flex-shrink: 0;
 }
 
 #{$v}col,
