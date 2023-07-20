@@ -1,0 +1,247 @@
+/*
+ * @Description: 样式重置
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-22 17:56:57
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 13:37:06
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@charset "UTF-8";
+
+::after,
+::before,
+audio,
+button,
+camera,
+checkbox,
+cover-image,
+cover-view,
+form,
+icon,
+image,
+input,
+label,
+live-player,
+live-pusher,
+movable-area,
+movable-view,
+navigator,
+picker,
+radio,
+rich-text,
+scroll-view,
+swiper,
+swiper-item,
+text,
+textarea,
+uni-app,
+uni-button,
+uni-image,
+uni-page,
+uni-page-body,
+uni-page-wrapper,
+uni-view,
+video,
+view {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+button::after {
+  border: none
+}
+
+uni-button::after {
+  display: none
+}
+
+._optgroup,
+._select,
+button,
+input,
+textarea {
+  line-height: 1.15;
+  font-family: inherit;
+  font-size: 100%
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-style: none;
+  outline: 0
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical
+}
+
+._img,
+image {
+  max-width: 100%;
+  display: block;
+  position: relative;
+  border-style: none;
+  will-change: transform
+}
+
+body,
+page {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent
+}
+body,
+page {
+  text-align: left;
+  color: $color;
+  font-family: $font-family;
+  font-size: 28rpx;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  background-color: $bg-color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div,
+article,
+aside,
+details,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+b,
+strong {
+  font-weight: 700;
+}
+audio,
+canvas,
+output,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+:focus {
+  outline: 0;
+}
+[v-cloak] {
+  display: none !important;
+}
+ol,
+ul {
+  list-style: none;
+}
+hr {
+  height: 0;
+  overflow: visible;
+}
+i,
+em,
+dfn {
+  font-style: normal;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  font-family: inherit;
+  font-size: 100%;
+}
+button::after {
+  border: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: 1.15;
+  font-family: inherit;
+  font-size: 100%;
+}
+button {
+  appearance: none;
+  border-style: none;
+  outline: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+img {
+  max-width: 100%;
+  display: block;
+  position: relative;
+  border-style: none;
+  will-change: transform;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  text-align: left;
+  color: $color;
+  font-family: $font-family;
+  font-size: 28rpx;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  background-color: $bg-color;
+}

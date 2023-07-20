@@ -1,0 +1,30 @@
+/*
+ * @Description: 不透明度样式
+ * @Author: linpan
+ * @Date: 2022-11-24 18:09:44
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:30:03
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@each $key,
+  $val
+    in (
+      "0": 0,
+      "01": 0.1,
+      "02": 0.2,
+      "03": 0.3,
+      "04": 0.4,
+      "05": 0.5,
+      "06": 0.6,
+      "07": 0.7,
+      "08": 0.8,
+      "09": 0.9,
+      "1": 1
+    )
+{
+  #{$v}opacity-#{$key} {
+    opacity: #{$val} !important;
+  }
+}

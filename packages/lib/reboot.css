@@ -1,0 +1,10 @@
+@charset "UTF-8";/*!
+ * @Description: Vusui-css CSS样式库
+ * @Author: linpan
+ * @Date: 2022-11-22 17:39:35
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:28:50
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */*,:after,:before{margin:0;padding:0;box-sizing:border-box}a{color:#515355;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects}a:hover,a:active{color:inherit;outline:0;text-decoration:none}a[href]{cursor:pointer}a[href]:hover{color:#409eff}a[href].underline:hover{text-decoration:underline}div,article,aside,details,dialog,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block}b,strong{font-weight:700}audio,canvas,output,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}:focus{outline:0}[v-cloak]{display:none!important}ol,ul{list-style:none}hr{height:0;overflow:visible}i,em,dfn{font-style:normal}table{border-collapse:collapse;border-spacing:0}caption,table,tbody,td,tfoot,th,thead,tr{font-family:inherit;font-size:100%}button:after{border:none}button,input,optgroup,select,textarea{line-height:1.15;font-family:inherit;font-size:100%}button{appearance:none;border-style:none;outline:0}textarea{overflow:auto;vertical-align:top;resize:vertical}img{max-width:100%;display:block;position:relative;border-style:none;will-change:transform}svg:not(:root){overflow:hidden}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}html,body{width:100%;height:100%}body{text-align:left;color:#515355;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Microsoft YaHei,\5fae\8f6f\96c5\9ed1,FreeSans,Droid Sans,wenquanyi micro hei,PingFang SC,Hiragino Sans GB,Hiragino Sans GB W3,Arial,sans-serif;font-size:.875rem;font-weight:400;line-height:1.5;background-color:#fff}

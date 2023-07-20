@@ -1,0 +1,63 @@
+/*
+ * @Description: 布局样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 09:25:39
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-09 09:22:38
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+
+/*------------------------------
+ * 禁止页面滚动
+ *------------------------------
+*/
+#{$v}html-unscrollable,
+#{$v}html-unscrollable body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*------------------------------
+ * 布局包装
+ *------------------------------
+*/
+#{$v}wrapper {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*------------------------------
+ * 布局容器
+ *------------------------------
+*/
+#{$v}container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20rpx;
+}
+
+/*------------------------------
+ * 元素水平居中
+ *------------------------------
+*/
+#{$v}mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*------------------------------
+ * 元素全屏
+ *------------------------------
+*/
+#{$v}full,
+#{$v}full-flex {
+  width: 100%;
+  display: block;
+}
+#{$v}full-flex {
+  display: flex;
+}

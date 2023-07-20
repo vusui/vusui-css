@@ -1,0 +1,741 @@
+/*
+ * @Description: 动画样式
+ * @Author: linpan
+ * @Date: 2022-11-23 15:39:36
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:25:57
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+/*------------------------------
+ * Transition 过渡动画时间、类型
+ *------------------------------
+*/
+#{$v}trans {
+  transition-property: all;
+  transition-duration: 0.3s; /* 规定慢速开始，然后变快，然后慢速结束的过渡效果 */
+  transition-timing-function: ease;
+
+  // 快速
+  &.fast {
+    transition-duration: 0.25s;
+  }
+
+  // 缓慢
+  &.slow {
+    transition-duration: 1s;
+  }
+
+  // 规定以相同速度开始至结束的过渡效果
+  &.linear {
+    transition-timing-function: linear;
+  }
+
+  // 规定以慢速开始的过渡效果
+  &.ease-in {
+    transition-timing-function: ease-in;
+  }
+
+  // 规定以慢速结束的过渡效果
+  &.ease-out {
+    transition-timing-function: ease-out;
+  }
+
+  // 规定以慢速开始和结束的过渡效果
+  &.ease-in-out {
+    transition-timing-function: ease-in-out;
+  }
+}
+
+/*------------------------------
+ * Animation 动画时间、类型
+ *------------------------------
+*/
+#{$v}anim {
+  animation-duration: 0.3s;
+  /* 动画以低速结束 */
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+
+  // 快速
+  &.fast {
+    animation-duration: 0.15s;
+  }
+
+  // 缓慢
+  &.slow {
+    animation-duration: 1.2s;
+  }
+
+  // 动画从头到尾的速度是相同的
+  &.linear {
+    animation-timing-function: linear;
+  }
+
+  // 动画以低速开始，然后加快，在结束前变慢
+  &.ease {
+    animation-timing-function: ease;
+  }
+
+  // 动画以低速开始
+  &.ease-in {
+    animation-timing-function: ease-in;
+  }
+
+  // 动画以低速开始和结束
+  &.ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+
+  // 规定动画无限次播放
+  &.infinite {
+    animation-iteration-count: infinite;
+  }
+
+  // 旋转
+  &.spin {
+    animation: VusSpin 1.5s infinite linear;
+  }
+
+  // 脉动旋转
+  &.spin-pulse {
+    animation: VusSpin 1.5s infinite steps(16);
+  }
+
+  // 闪烁
+  &.flash {
+    animation-name: vusFlash;
+  }
+
+  // 逐渐(显示)
+  &.fade-in {
+    animation-name: VusFadeIn;
+  }
+
+  // 逐渐(隐藏)
+  &.fade-out {
+    animation-name: VusFadeOut;
+  }
+
+  // 向上滑动(显示)
+  &.up-slide-in {
+    animation-name: VusUpSlideIn;
+  }
+
+  // 向上滑动(隐藏)
+  &.up-slide-out {
+    animation-name: VusUpSlideOut;
+  }
+
+  // 向上滑动小(显示)
+  &.up-min-slide-in {
+    animation-name: VusUpMinSlideIn;
+  }
+
+  // 向上滑动小(隐藏)
+  &.up-min-slide-out {
+    animation-name: VusUpMinSlideOut;
+  }
+
+  // 向下滑动(显示)
+  &.down-slide-in {
+    animation-name: VusDownSlideIn;
+  }
+
+  // 向下滑动(隐藏)
+  &.down-slide-out {
+    animation-name: VusDownSlideOut;
+  }
+
+  // 向下滑动小(显示)
+  &.down-min-slide-in {
+    animation-name: VusDownMinSlideIn;
+  }
+
+  // 向下滑动小(隐藏)
+  &.down-min-slide-out {
+    animation-name: VusDownMinSlideOut;
+  }
+
+  /* 向左滑动(显示) */
+  &.left-slide-in {
+    animation-name: VusLeftSlideIn;
+  }
+
+  /* 向左滑动(隐藏) */
+  &.left-slide-out {
+    animation-name: VusLeftSlideOut;
+  }
+
+  /* 向右滑动(显示) */
+  &.right-slide-in {
+    animation-name: VusRightSlideIn;
+  }
+
+  /* 向右滑动(隐藏) */
+  &.right-slide-out {
+    animation-name: VusRightSlideOut;
+  }
+
+  /* 由小到大(显示) */
+  &.min-zoom-in {
+    animation-name: VusMinZoomIn;
+  }
+
+  /* 由小到大(隐藏) */
+  &.min-zoom-out {
+    animation-name: VusMinZoomOut;
+  }
+
+  /* 由大到小(显示) */
+  &.max-zoom-in {
+    animation-name: VusMaxZoomIn;
+  }
+
+  /* 由大到小(隐藏) */
+  &.max-zoom-out {
+    animation-name: VusMaxZoomOut;
+  }
+
+  /* 向上放大出现(贝塞尔) */
+  &.up-zoom-in {
+    animation-name: VusUpZoomIn;
+  }
+
+  /* 向下放大出现(贝塞尔) */
+  &.down-zoom-in {
+    animation-name: VusDownZoomIn;
+  }
+
+  /* 从左放大出现(贝塞尔) */
+  &.left-zoom-in {
+    animation-name: VusLeftZoomIn;
+  }
+
+  /* 从右放大出现(贝塞尔) */
+  &.right-zoom-in {
+    animation-name: VusRightZoomIn;
+  }
+
+  /* 翻转 */
+  &.flip {
+    animation-name: VusFlip;
+    backface-visibility: visible;
+  }
+
+  /* 左右抖动 */
+  &.shake {
+    animation-name: VusShake;
+  }
+
+  /* 上下反弹跳动 */
+  &.bounce {
+    animation-name: VusBounce;
+    transform-origin: center bottom;
+  }
+
+  /* 左边反弹滑动(出现) */
+  &.left-bounce-in {
+    animation-name: VusLeftBounceIn;
+  }
+
+  /* 左边反弹滑动(隐藏) */
+  &.left-bounce-out {
+    animation-name: VusBounceOutLeft;
+  }
+
+  /* 右边反弹滑动(出现) */
+  &.right-bounce-in {
+    animation-name: VusRightBounceIn;
+  }
+
+  /* 右边反弹滑动(隐藏) */
+  &.right-bounce-out {
+    animation-name: VusRightBounceOut;
+  }
+
+  /* 拉橡皮 */
+  &.rubber-band {
+    animation-name: VusRubberBand;
+  }
+}
+
+/* Spin旋转 */
+@keyframes VusSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* 闪烁 */
+@keyframes vusFlash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* ===== 逐渐消失效果 ===== */
+/* 逐渐(显示) */
+@keyframes VusFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 逐渐(隐藏) */
+@keyframes VusFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===== 滑动效果 ===== */
+/* 向上滑动(显示) */
+@keyframes VusUpSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向上滑动(隐藏) */
+@keyframes VusUpSlideOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/* 向上滑动小(显示) */
+@keyframes VusUpMinSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向上滑动小(隐藏) */
+@keyframes VusUpMinSlideOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+/* 向下滑动(显示) */
+@keyframes VusDownSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向下滑动(隐藏) */
+@keyframes VusDownSlideOut {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+/* 向下滑动小(显示) */
+@keyframes VusDownMinSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向下滑动小(隐藏) */
+@keyframes VusDownMinSlideOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* 向左滑动(显示) */
+@keyframes VusLeftSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向左滑动(隐藏) */
+@keyframes VusLeftSlideOut {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+/* 向右滑动(显示) */
+@keyframes VusRightSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 向右滑动(隐藏) */
+@keyframes VusRightSlideOut {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* ===== 放大缩小效果 ===== */
+/* 由小到大(显示) */
+@keyframes VusMinZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 由小到大(隐藏) */
+@keyframes VusMinZoomOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+/* 由大到小(显示) */
+@keyframes VusMaxZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 由大到小(隐藏) */
+@keyframes VusMaxZoomOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+}
+
+/* 向上放大出现(贝塞尔) */
+@keyframes VusUpZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* 向下放大出现(贝塞尔) */
+@keyframes VusDownZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* 从左放大出现(贝塞尔) */
+@keyframes VusLeftZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* 从右放大出现(贝塞尔) */
+@keyframes VusRightZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* ===== Flip翻转效果 ===== */
+/* 翻转 */
+@keyframes VusFlip {
+  0% {
+    transform: perspective(600px) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(600px) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: perspective(600px) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(600px) scale3d(0.95, 0.95, 0.95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(600px);
+    animation-timing-function: ease-in;
+  }
+}
+
+/* ===== Shake抖动效果 ===== */
+/* 左右抖动 */
+@keyframes VusShake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+/*------Bounce反弹跳动------*/
+/* 上下反弹跳动 */
+@keyframes VusBounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+/* 左边反弹滑动(出现) */
+@keyframes VusLeftBounceIn {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* 左边反弹滑动(隐藏) */
+@keyframes VusBounceOutLeft {
+  20% {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* 右边反弹滑动(出现) */
+@keyframes VusRightBounceIn {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* 右边反弹滑动(隐藏) */
+@keyframes VusRightBounceOut {
+  20% {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+/* 拉橡皮 */
+@keyframes VusRubberBand {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}

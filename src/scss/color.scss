@@ -1,0 +1,127 @@
+/*
+ * @Description: 颜色样式
+ * @Author: linpan
+ * @Date: 2022-11-23 16:18:42
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:27:10
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+/*------------------------------
+ * 文本颜色
+ *------------------------------
+*/
+@each $key, $val in $colors {
+  #{$v}color--#{$key} {
+    color: $val !important;
+  }
+}
+
+/*------------------------------
+ * 背景颜色
+ *------------------------------
+*/
+@each $key, $val in $colors {
+  #{$v}bg--#{$key} {
+    background-color: $val !important;
+  }
+}
+
+/*------------------------------
+ * 边框颜色
+ *------------------------------
+*/
+@each $key, $val in $colors {
+  #{$v}border--#{$key} {
+    border-color: $val !important;
+  }
+}
+
+/*------------------------------
+ * 透明背景颜色
+ *------------------------------
+*/
+@each $key,
+  $val
+    in (
+      "01": 0.1,
+      "02": 0.2,
+      "03": 0.3,
+      "04": 0.4,
+      "05": 0.5,
+      "06": 0.6,
+      "07": 0.7,
+      "08": 0.8,
+      "09": 0.9
+    )
+{
+  #{$v}bg--black-#{$key} {
+    background-color: rgba(0, 0, 0, $val) !important;
+  }
+  #{$v}bg--white-#{$key} {
+    background-color: rgba(255, 255, 255, $val) !important;
+  }
+}
+
+/*------------------------------
+ * 颜色混合模式
+ *------------------------------
+*/
+#{$v}mode-normal {
+  mix-blend-mode: normal; // 正常
+}
+#{$v}mode-multiply {
+  mix-blend-mode: multiply; // 正片叠底
+}
+#{$v}mode-screen {
+  mix-blend-mode: screen; // 滤色
+}
+#{$v}mode-overlay {
+  mix-blend-mode: overlay; // 叠加
+}
+#{$v}mode-darken {
+  mix-blend-mode: darken; // 变暗
+}
+#{$v}mode-lighten {
+  mix-blend-mode: lighten; // 变亮
+}
+#{$v}mode-color-dodge {
+  mix-blend-mode: color-dodge; // 颜色减淡
+}
+#{$v}mode-color-burn {
+  mix-blend-mode: color-burn; // 颜色加深
+}
+#{$v}mode-hard-light {
+  mix-blend-mode: hard-light; // 强光
+}
+#{$v}mode-soft-light {
+  mix-blend-mode: soft-light; // 柔光
+}
+#{$v}mode-difference {
+  mix-blend-mode: difference; // 差值
+}
+#{$v}mode-exclusion {
+  mix-blend-mode: exclusion; // 排除
+}
+#{$v}mode-hue {
+  mix-blend-mode: hue; // 色相
+}
+#{$v}mode-saturation {
+  mix-blend-mode: saturation; // 饱和度
+}
+#{$v}mode-color {
+  mix-blend-mode: color; // 颜色
+}
+#{$v}mode-luminosity {
+  mix-blend-mode: luminosity; // 亮度
+}
+#{$v}mode-initial {
+  mix-blend-mode: initial; // 默认
+}
+#{$v}mode-inherit {
+  mix-blend-mode: inherit; // 继承
+}
+#{$v}mode-unset {
+  mix-blend-mode: unset; // 还原
+}

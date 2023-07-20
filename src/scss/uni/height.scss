@@ -1,0 +1,74 @@
+/*
+ * @Description: 高度样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 14:36:17
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-09 08:56:21
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+// @use "sass:math";
+
+/*------------------------------
+ * 百分比 & vh
+ *------------------------------
+*/
+$numberList: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100;
+@for $i from 1 through length($numberList) {
+  #{$v}h-#{nth($numberList, $i)} {
+    height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}h-min-#{nth($numberList, $i)} {
+    min-height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}h-max-#{nth($numberList, $i)} {
+    max-height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}vh-#{nth($numberList, $i)} {
+    height: #{nth($numberList, $i)}vh !important;
+  }
+}
+
+/*------------------------------
+ * 像素
+ *------------------------------
+*/
+$numberList2: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
+  36 38 40 42 44 45 46 48 50 52 54 55 56 58 60 62 64 65 66 68 70 72 74 75 76 78
+  80 82 84 85 86 88 90 92 94 95 96 98 100 110 120 130 140 150 160 170 180 190
+  200 250 300 350 400 450 500 550 600 650 700 750;
+@for $i from 1 through length($numberList2) {
+  #{$v}h-px-#{nth($numberList2, $i)} {
+    height: #{nth($numberList2, $i) * 2}rpx !important;
+  }
+  #{$v}h-min-px-#{nth($numberList2, $i)} {
+    min-height: #{nth($numberList2, $i) * 2}rpx !important;
+  }
+  #{$v}h-max-px-#{nth($numberList2, $i)} {
+    max-height: #{nth($numberList2, $i) * 2}rpx !important;
+  }
+  #{$v}h-calc-#{nth($numberList2, $i)} {
+    height: calc(100% - #{nth($numberList2, $i) * 2}rpx) !important;
+  }
+  #{$v}vh-calc-#{nth($numberList2, $i)} {
+    height: calc(100vh - #{nth($numberList2, $i) * 2}rpx) !important;
+  }
+}
+
+/*------------------------------
+ * 其他
+ *------------------------------
+*/
+#{$v}h-0 {
+  height: 0 !important;
+}
+#{$v}h-auto {
+  height: auto !important;
+}
+#{$v}h-min-auto {
+  min-height: auto !important;
+}
+#{$v}h-max-auto {
+  max-height: auto !important;
+}

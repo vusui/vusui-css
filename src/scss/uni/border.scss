@@ -1,0 +1,149 @@
+/*
+ * @Description: 边框样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 14:26:13
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-07-18 09:59:43
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+// @use "sass:math";
+
+// 基础
+[class*=" #{$v2}border-"],
+[class^="#{$v2}border-"] {
+  border-width: 0;
+  border-style: solid;
+  border-color: $border-color;
+}
+
+// 边框大小
+@for $i from 0 through 20 {
+  @if $i != 0 {
+    #{$v}border-#{$i} {
+      border-width: #{$i * 2}rpx;
+    }
+    #{$v}border-l-#{$i} {
+      border-left-width: #{$i * 2}rpx;
+    }
+    #{$v}border-t-#{$i} {
+      border-top-width: #{$i * 2}rpx;
+    }
+    #{$v}border-r-#{$i} {
+      border-right-width: #{$i * 2}rpx;
+    }
+    #{$v}border-b-#{$i} {
+      border-bottom-width: #{$i * 2}rpx;
+    }
+  } @else {
+    #{$v}border-0 {
+      border: 0;
+    }
+    #{$v}border-l-0 {
+      border-left-width: 0;
+    }
+    #{$v}border-t-0 {
+      border-top-width: 0;
+    }
+    #{$v}border-r-0 {
+      border-right-width: 0;
+    }
+    #{$v}border-b-0 {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+#{$v}border-solid {
+  border-style: solid;
+}
+#{$v}border-dashed {
+  border-style: dashed;
+}
+#{$v}border-dotted {
+  border-style: dotted;
+}
+
+// 细边框
+.vus-border-s-1::after,
+.vus-border-s-2::after,
+.vus-border-s-0::after {
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+}
+
+[class*="vus-border-s-b-"]::after,
+[class*="vus-border-s-t-"]::after {
+  height: 200%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+[class*="vus-border-s-l-"]::after,
+[class*="vus-border-s-r-"]::after {
+  width: 200%;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+[class*="vus-border-s-"] {
+  position: relative;
+}
+
+[class*="vus-border-s-"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e6e6e6;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+// 四边
+.vus-border-s-1::after {
+  border-width: 1rpx;
+}
+.vus-border-s-0::after {
+  border-width: 0rpx;
+}
+
+// 左边
+.vus-border-s-l-1::after {
+  border-left-width: 1rpx;
+}
+.vus-border-s-l-0::after {
+  border-left-width: 0rpx;
+}
+
+// 顶部
+.vus-border-s-t-1::after {
+  border-top-width: 1rpx;
+}
+.vus-border-s-t-0::after {
+  border-top-width: 0rpx;
+}
+
+// 右边
+.vus-border-s-r-1::after {
+  border-right-width: 1rpx;
+}
+.vus-border-s-r-0::after {
+  border-right-width: 0rpx;
+}
+
+// 底部
+.vus-border-s-b-1::after {
+  border-bottom-width: 1rpx;
+}
+.vus-border-s-b-0::after {
+  border-bottom-width: 0rpx;
+}

@@ -1,0 +1,49 @@
+/*
+ * @Description: 动画样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:39:36
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2022-11-25 15:14:09
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+/*------------------------------
+ * Transition 过渡动画时间、类型
+ *------------------------------
+*/
+#{$v}trans {
+  transition-property: all;
+  transition-duration: 0.3s; /* 规定慢速开始，然后变快，然后慢速结束的过渡效果 */
+  transition-timing-function: ease;
+
+  // 快速
+  &.fast {
+    transition-duration: 0.25s;
+  }
+
+  // 缓慢
+  &.slow {
+    transition-duration: 1s;
+  }
+
+  // 规定以相同速度开始至结束的过渡效果
+  &.linear {
+    transition-timing-function: linear;
+  }
+
+  // 规定以慢速开始的过渡效果
+  &.ease-in {
+    transition-timing-function: ease-in;
+  }
+
+  // 规定以慢速结束的过渡效果
+  &.ease-out {
+    transition-timing-function: ease-out;
+  }
+
+  // 规定以慢速开始和结束的过渡效果
+  &.ease-in-out {
+    transition-timing-function: ease-in-out;
+  }
+}

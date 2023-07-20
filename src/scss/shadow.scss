@@ -1,0 +1,138 @@
+/*
+ * @Description: 阴影样式
+ * @Author: linpan
+ * @Date: 2022-11-23 16:27:07
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:31:53
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+/*------------------------------
+ * 元素阴影
+ *------------------------------
+*/
+$numberList: 1 2 3 4 5 6 7 8 9 10 15 20 25 30;
+@for $i from 1 through length($numberList) {
+  #{$v}bs-#{nth($numberList, $i)} {
+    box-shadow: 0 0 #{math.div(nth($numberList, $i), 16)}rem rgba(0, 0, 0, 0.1);
+  }
+}
+@for $i from 1 through length($numberList) {
+  #{$v}bs-1-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.0625rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-2-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.125rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-3-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.1875rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-4-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.25rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-5-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.3125rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-6-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.375rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-7-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.4375rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-8-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.5rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-9-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.5625rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+  #{$v}bs-10-#{nth($numberList, $i)} {
+    box-shadow: 0
+      0.625rem
+      #{math.div(nth($numberList, $i), 16)}rem
+      rgba(0, 0, 0, 0.1);
+  }
+}
+
+#{$v}bs-none {
+  box-shadow: none !important;
+}
+
+/*------------------------------
+ * 文本阴影
+ *------------------------------
+*/
+$numberList2: 1 2 3 4 5;
+@for $i from 1 through length($numberList2) {
+  #{$v}ts-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+}
+@for $i from 1 through length($numberList2) {
+  #{$v}ts-1-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0.0625rem
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+  #{$v}ts-2-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0.125rem
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+  #{$v}ts-3-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0.1875rem
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+  #{$v}ts-4-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0.25rem
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+  #{$v}ts-5-#{nth($numberList2, $i)} {
+    text-shadow: 0
+      0.3125rem
+      #{math.div(nth($numberList2, $i), 16)}rem
+      rgba(0, 0, 0, 0.3);
+  }
+}
+
+#{$v}ts-none {
+  text-shadow: none !important;
+}

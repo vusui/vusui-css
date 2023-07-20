@@ -1,0 +1,35 @@
+/*
+ * @Description: 旋转样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:19:41
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-09 09:17:54
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+$numberList: 45 90 135 180 225 270 315 360;
+@for $i from 1 through length($numberList) {
+  #{$v}rotate-#{nth($numberList, $i)} {
+    transform: rotate(#{nth($numberList, $i)}deg);
+  }
+  #{$v}rotate--#{nth($numberList, $i)} {
+    transform: rotate(-#{nth($numberList, $i)}deg);
+  }
+}
+
+#{$v}rotate-0 {
+  transform: rotate(0);
+}
+#{$v}rotate-x-0 {
+  transform: rotateX(0);
+}
+#{$v}rotate-x-180 {
+  transform: rotateX(180deg);
+}
+#{$v}rotate-y-0 {
+  transform: rotateY(0);
+}
+#{$v}rotate-y-180 {
+  transform: rotateY(180deg);
+}

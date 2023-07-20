@@ -1,0 +1,89 @@
+/*
+ * @Description: 圆角半径样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:08:35
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:37:30
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+@for $i from 0 through 10 {
+  #{$v}radius-#{$i} {
+    border-radius: #{math.div($i, 16)}rem;
+  }
+}
+
+@for $i from 0 through 10 {
+  #{$v}radius-tl-#{$i} {
+    border-top-left-radius: #{math.div($i, 16)}rem;
+  }
+  #{$v}radius-tr-#{$i} {
+    border-top-right-radius: #{math.div($i, 16)}rem;
+  }
+  #{$v}radius-bl-#{$i} {
+    border-bottom-left-radius: #{math.div($i, 16)}rem;
+  }
+  #{$v}radius-br-#{$i} {
+    border-bottom-right-radius: #{math.div($i, 16)}rem;
+  }
+}
+
+// 媒体设备
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @for $i from 0 through 10 {
+      #{$v}radius-#{$device}-#{$i} {
+        border-radius: #{math.div($i, 16)}rem;
+      }
+    }
+
+    @for $i from 0 through 10 {
+      #{$v}radius-tl-#{$device}-#{$i} {
+        border-top-left-radius: #{math.div($i, 16)}rem;
+      }
+      #{$v}radius-tr-#{$device}-#{$i} {
+        border-top-right-radius: #{math.div($i, 16)}rem;
+      }
+      #{$v}radius-bl-#{$device}-#{$i} {
+        border-bottom-left-radius: #{math.div($i, 16)}rem;
+      }
+      #{$v}radius-br-#{$device}-#{$i} {
+        border-bottom-right-radius: #{math.div($i, 16)}rem;
+      }
+    }
+  }
+}
+
+#{$v}radius-circle {
+  border-radius: 50%;
+}
+#{$v}radius-large {
+  border-radius: 125rem;
+}
+#{$v}radius-tl-circle {
+  border-top-left-radius: 50%;
+}
+#{$v}radius-tl-large {
+  border-top-left-radius: 125rem;
+}
+#{$v}radius-tr-circle {
+  border-top-right-radius: 50%;
+}
+#{$v}radius-tr-large {
+  border-top-right-radius: 125rem;
+}
+#{$v}radius-bl-circle {
+  border-bottom-left-radius: 50%;
+}
+#{$v}radius-bl-large {
+  border-bottom-left-radius: 125rem;
+}
+#{$v}radius-br-circle {
+  border-bottom-right-radius: 50%;
+}
+#{$v}radius-br-large {
+  border-bottom-right-radius: 125rem;
+}

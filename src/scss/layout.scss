@@ -1,0 +1,89 @@
+/*
+ * @Description: 布局样式
+ * @Author: linpan
+ * @Date: 2022-11-23 09:25:39
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:29:21
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+/*------------------------------
+ * 禁止页面滚动
+ *------------------------------
+*/
+#{$v}html-unscrollable,
+#{$v}html-unscrollable body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*------------------------------
+ * 布局包装
+ *------------------------------
+*/
+#{$v}wrapper {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*------------------------------
+ * 布局容器
+ *------------------------------
+*/
+#{$v}container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+}
+
+/*------------------------------
+ * 元素水平居中
+ *------------------------------
+*/
+#{$v}mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*------------------------------
+ * 元素全屏
+ *------------------------------
+*/
+#{$v}full,
+#{$v}full-flex {
+  width: 100%;
+  display: block;
+}
+#{$v}full-flex {
+  display: flex;
+}
+
+/*------------------------------
+ * 媒体设备
+ *------------------------------
+*/
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @if $device == $xs {
+      #{$v}container {
+        max-width: 550px;
+      }
+    } @else if $device == $sm {
+      #{$v}container {
+        max-width: 740px;
+      }
+    } @else if $device == $md {
+      #{$v}container {
+        max-width: 1000px;
+      }
+    } @else if $device == $lg {
+      #{$v}container {
+        max-width: 1200px;
+      }
+    }
+  }
+}

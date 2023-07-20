@@ -1,0 +1,10 @@
+@charset "UTF-8";/*!
+ * @Description: Vusui-css CSS样式库
+ * @Author: linpan
+ * @Date: 2022-11-22 17:39:35
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:28:50
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */.vus-img,.vus-img-full{max-width:100%;height:auto;display:block}.vus-img-full{width:100%}.vus-img-wh-full{width:100%;height:100%;display:block}.vus-bg-size,.vus-bg-size-contain,.vus-bg-size-cover,.vus-bg-size-x,.vus-bg-size-y{background-size:100% 100%;background-position:center;background-repeat:no-repeat}.vus-bg-size-x{background-size:100% auto}.vus-bg-size-y{background-size:auto 100%}.vus-bg-size-cover{background-size:cover}.vus-bg-size-contain{background-size:contain}

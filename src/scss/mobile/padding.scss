@@ -1,0 +1,63 @@
+/*
+ * @Description: 内补填充(padding)
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 15:02:14
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-04-06 10:18:23
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+$numberList: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
+  36 38 40 42 44 45 46 48 50 52 54 55 56 58 60 62 64 65 66 68 70 72 74 75 76 78
+  80 82 84 85 86 88 90 92 94 95 96 98 100 110 120 130 140 150 160 170 180 190
+  200 0;
+
+@for $i from 1 through length($numberList) {
+  #{$v}pa-#{nth($numberList, $i)} {
+    padding: #{math.div(nth($numberList, $i), 16)}rem !important;
+  }
+}
+
+@for $i from 1 through length($numberList) {
+  #{$v}pl-#{nth($numberList, $i)} {
+    padding-left: #{math.div(nth($numberList, $i), 16)}rem !important;
+  }
+  #{$v}pt-#{nth($numberList, $i)} {
+    padding-top: #{math.div(nth($numberList, $i), 16)}rem !important;
+  }
+  #{$v}pr-#{nth($numberList, $i)} {
+    padding-right: #{math.div(nth($numberList, $i), 16)}rem !important;
+  }
+  #{$v}pb-#{nth($numberList, $i)} {
+    padding-bottom: #{math.div(nth($numberList, $i), 16)}rem !important;
+  }
+}
+
+// // 媒体设备
+// @each $device, $value in $media-min-width {
+//   @include media-min($device) {
+//     @for $i from 1 through length($numberList) {
+//       #{$v}pa-#{$device}-#{nth($numberList, $i)} {
+//         padding: #{math.div(nth($numberList, $i), 16)}rem;
+//       }
+//     }
+
+//     @for $i from 1 through length($numberList) {
+//       #{$v}pl-#{$device}-#{nth($numberList, $i)} {
+//         padding-left: #{math.div(nth($numberList, $i), 16)}rem;
+//       }
+//       #{$v}pt-#{$device}-#{nth($numberList, $i)} {
+//         padding-top: #{math.div(nth($numberList, $i), 16)}rem;
+//       }
+//       #{$v}pr-#{$device}-#{nth($numberList, $i)} {
+//         padding-right: #{math.div(nth($numberList, $i), 16)}rem;
+//       }
+//       #{$v}pb-#{$device}-#{nth($numberList, $i)} {
+//         padding-bottom: #{math.div(nth($numberList, $i), 16)}rem;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,53 @@
+/*
+ * @Description: 公共方法
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 09:44:42
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:36:03
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+// 字符截止加省略号
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 强制换行
+@mixin word-wrap {
+  word-break: break-all; //只对英文起作用，以字母作为换行依据。
+  word-wrap: break-word; //只对英文起作用，以单词作为换行依据。
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+// 设置placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
+}

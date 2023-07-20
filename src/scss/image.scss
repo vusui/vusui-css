@@ -1,0 +1,52 @@
+/*
+ * @Description: 图片样式
+ * @Author: linpan
+ * @Date: 2022-11-23 15:30:28
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:28:27
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+#{$v}img,
+#{$v}img-full {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#{$v}img-full {
+  width: 100%;
+}
+
+#{$v}img-wh-full {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#{$v}bg-size,
+#{$v}bg-size-contain,
+#{$v}bg-size-cover,
+#{$v}bg-size-x,
+#{$v}bg-size-y {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#{$v}bg-size-x {
+  background-size: 100% auto;
+}
+
+#{$v}bg-size-y {
+  background-size: auto 100%;
+}
+
+#{$v}bg-size-cover {
+  background-size: cover;
+}
+
+#{$v}bg-size-contain {
+  background-size: contain;
+}

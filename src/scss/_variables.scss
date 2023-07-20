@@ -1,0 +1,119 @@
+/*
+ * @Description: 变量配置
+ * @Author: linpan
+ * @Date: 2022-11-22 17:45:12
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 13:38:43
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+// vus前缀
+$v: ".vus-";
+$v2: "vus-";
+
+$color: #515355 !default;
+$color-primary: #409eff !default;
+$bg-color: #ffffff !default;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Helvetica, "Microsoft YaHei", "微软雅黑", FreeSans,
+  "Droid Sans", "wenquanyi micro hei", "PingFang SC", "Hiragino Sans GB",
+  "Hiragino Sans GB W3", Arial, sans-serif !default;
+$font-family-number: SourceCodeProRegular, sans-serif !default;
+$font-family-en: "Century Gothic", sans-serif !default;
+$font-size: 0.875rem !default;
+$font-weight: 400 !default;
+$line-height: 1.5 !default;
+
+// 字体大小
+$size-xs: 0.75rem !default;
+$size-sm: 0.875rem !default;
+$size-md: 1rem !default;
+$size-lg: 1.125rem !default;
+$size-xl: 1.25rem !default;
+
+// 标题字体
+$h1: 2.5rem !default;
+$h2: 2rem !default;
+$h3: 1.75rem !default;
+$h4: 1.5rem !default;
+$h5: 1.25rem !default;
+$h6: 0.9375rem !default;
+
+// 边框
+$border-color: #dcdfe6 !default;
+$border-color-light: #e4e7ed !default;
+$border-color-dark: #d4d7de !default;
+
+//媒体设备定义规范
+$xs: "xs" !default;
+$sm: "sm" !default;
+$md: "md" !default;
+$lg: "lg" !default;
+$xl: "xl" !default;
+
+//@media
+$media-min-width: (
+  $xs: 576px,
+  $sm: 768px,
+  $md: 992px,
+  $lg: 1200px,
+  $xl: 1920px,
+) !default;
+
+// 颜色
+$colors: () !default;
+$colors: map-merge(
+  (
+    "primary": #409eff,
+    "success": #67c23a,
+    "warning": #e6a23c,
+    "danger": #dd5544,
+    "error": #ec0000,
+    "info": #708090,
+    "black": #000000,
+    "black2": #111111,
+    "black3": #222222,
+    "dark": #333333,
+    "dark2": #444444,
+    "dark3": #555555,
+    "gray": #888888,
+    "gray2": #999999,
+    "gray3": #aaaaaa,
+    "light": #cccccc,
+    "light2": #dddddd,
+    "light3": #eeeeee,
+    "light4": #f3f3f3,
+    "light5": #f5f5f5,
+    "light6": #f8f8f8,
+    "white": #ffffff,
+    "red": #ff0000,
+    "red2": #ff6e6e,
+    "red3": #ffc4c4,
+    "yellow": #ffff00,
+    "yellow2": #ffff80,
+    "yellow3": #ffffd4,
+    "orange": #ffa500,
+    "orange2": #ffd17b,
+    "orange3": #fff0d3,
+    "brown": #a52a2a,
+    "brown2": #ce7b7b,
+    "brown3": #f3cccc,
+    "green": #008000,
+    "green2": #5ec25e,
+    "green3": #d3fad3,
+    "cyan": #00ffff,
+    "cyan2": #77ffff,
+    "cyan3": #dfffff,
+    "blue": #0000ff,
+    "blue2": #7b7bff,
+    "blue3": #dbdbff,
+    "skyblue": #87ceeb,
+    "purple": #800080,
+    "purple2": #b951b9,
+    "purple3": #ffd6ff,
+    "inherit": inherit,
+    "transparent": transparent,
+  ),
+  $colors
+);

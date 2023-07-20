@@ -1,0 +1,107 @@
+/*
+ * @Description: 边框样式
+ * @Author: linpan
+ * @Date: 2022-11-23 14:26:13
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:25:33
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+// 基础
+[class*=" #{$v2}border-"],
+[class^="#{$v2}border-"] {
+  border-width: 0;
+  border-style: solid;
+  border-color: $border-color;
+}
+
+// 边框大小
+@for $i from 0 through 20 {
+  @if $i != 0 {
+    #{$v}border-#{$i} {
+      border-width: #{math.div($i, 16)}rem;
+    }
+    #{$v}border-l-#{$i} {
+      border-left-width: #{math.div($i, 16)}rem;
+    }
+    #{$v}border-t-#{$i} {
+      border-top-width: #{math.div($i, 16)}rem;
+    }
+    #{$v}border-r-#{$i} {
+      border-right-width: #{math.div($i, 16)}rem;
+    }
+    #{$v}border-b-#{$i} {
+      border-bottom-width: #{math.div($i, 16)}rem;
+    }
+  } @else {
+    #{$v}border-0 {
+      border: 0;
+    }
+    #{$v}border-l-0 {
+      border-left-width: 0;
+    }
+    #{$v}border-t-0 {
+      border-top-width: 0;
+    }
+    #{$v}border-r-0 {
+      border-right-width: 0;
+    }
+    #{$v}border-b-0 {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+// 媒体设备
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @for $i from 0 through 20 {
+      @if $i != 0 {
+        #{$v}border-#{$device}-#{$i} {
+          border-width: #{math.div($i, 16)}rem;
+        }
+        #{$v}border-l-#{$device}-#{$i} {
+          border-left-width: #{math.div($i, 16)}rem;
+        }
+        #{$v}border-t-#{$device}-#{$i} {
+          border-top-width: #{math.div($i, 16)}rem;
+        }
+        #{$v}border-r-#{$device}-#{$i} {
+          border-right-width: #{math.div($i, 16)}rem;
+        }
+        #{$v}border-b-#{$device}-#{$i} {
+          border-bottom-width: #{math.div($i, 16)}rem;
+        }
+      } @else {
+        #{$v}border-#{$device}-0 {
+          border: 0;
+        }
+        #{$v}border-l-#{$device}-0 {
+          border-left-width: 0;
+        }
+        #{$v}border-t-#{$device}-0 {
+          border-top-width: 0;
+        }
+        #{$v}border-r-#{$device}-0 {
+          border-right-width: 0;
+        }
+        #{$v}border-b-#{$device}-0 {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+}
+
+#{$v}border-solid {
+  border-style: solid;
+}
+#{$v}border-dashed {
+  border-style: dashed;
+}
+#{$v}border-dotted {
+  border-style: dotted;
+}

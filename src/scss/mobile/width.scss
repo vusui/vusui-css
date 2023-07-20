@@ -1,0 +1,111 @@
+/*
+ * @Description: 宽度样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 14:49:20
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2022-11-30 15:03:54
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+/*------------------------------
+ * 百分比 & vw
+ *------------------------------
+*/
+$numberList: 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100;
+@for $i from 1 through length($numberList) {
+  #{$v}w-#{nth($numberList, $i)} {
+    width: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}w-min-#{nth($numberList, $i)} {
+    min-width: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}w-max-#{nth($numberList, $i)} {
+    max-width: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}vw-#{nth($numberList, $i)} {
+    width: #{nth($numberList, $i)}vw !important;
+  }
+}
+
+/*------------------------------
+ * 像素
+ *------------------------------
+*/
+$numberList2: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
+  36 38 40 42 44 45 46 48 50 52 54 55 56 58 60 62 64 65 66 68 70 72 74 75 76 78
+  80 82 84 85 86 88 90 92 94 95 96 98 100 110 120 130 140 150 160 170 180 190
+  200 250 300 350 400 450 500 550 600 650 700 750;
+@for $i from 1 through length($numberList2) {
+  #{$v}w-px-#{nth($numberList2, $i)} {
+    width: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}w-min-px-#{nth($numberList2, $i)} {
+    min-width: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}w-max-px-#{nth($numberList2, $i)} {
+    max-width: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}w-calc-#{nth($numberList2, $i)} {
+    width: calc(100% - #{math.div(nth($numberList2, $i), 16)}rem) !important;
+  }
+  #{$v}vw-calc-#{nth($numberList2, $i)} {
+    width: calc(100vw - #{math.div(nth($numberList2, $i), 16)}rem) !important;
+  }
+}
+
+// // 媒体设备
+// @each $device, $value in $media-min-width {
+//   @include media-min($device) {
+//     @for $i from 1 through length($numberList) {
+//       #{$v}w-#{$device}-#{nth($numberList, $i)} {
+//         width: #{nth($numberList, $i) * 1%};
+//       }
+//       #{$v}w-min-#{$device}-#{nth($numberList, $i)} {
+//         min-width: #{nth($numberList, $i) * 1%};
+//       }
+//       #{$v}w-max-#{$device}-#{nth($numberList, $i)} {
+//         max-width: #{nth($numberList, $i) * 1%};
+//       }
+//       #{$v}vw-#{$device}-#{nth($numberList, $i)} {
+//         width: #{nth($numberList, $i)}vw;
+//       }
+//     }
+//     @for $i from 1 through length($numberList2) {
+//       #{$v}w-px-#{$device}-#{nth($numberList2, $i)} {
+//         width: #{math.div(nth($numberList2, $i), 16)}rem;
+//       }
+//       #{$v}w-min-px-#{$device}-#{nth($numberList2, $i)} {
+//         min-width: #{math.div(nth($numberList2, $i), 16)}rem;
+//       }
+//       #{$v}w-max-px-#{$device}-#{nth($numberList2, $i)} {
+//         max-width: #{math.div(nth($numberList2, $i), 16)}rem;
+//       }
+//       #{$v}w-calc-#{$device}-#{nth($numberList2, $i)} {
+//         width: calc(100% - #{math.div(nth($numberList2, $i), 16)}rem);
+//       }
+//       #{$v}vw-calc-#{$device}-#{nth($numberList2, $i)} {
+//         width: calc(100vw - #{math.div(nth($numberList2, $i), 16)}rem);
+//       }
+//     }
+//   }
+// }
+
+/*------------------------------
+ * 其他
+ *------------------------------
+*/
+#{$v}w-0 {
+  width: 0 !important;
+}
+#{$v}w-atuo {
+  width: auto !important;
+}
+#{$v}w-min-auto {
+  min-width: auto !important;
+}
+#{$v}w-max-auto {
+  max-width: auto !important;
+}

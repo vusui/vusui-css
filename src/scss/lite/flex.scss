@@ -1,0 +1,282 @@
+/*
+ * @Description: flex盒子样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-11 11:08:26
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2023-05-12 10:36:52
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+#{$v}box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  &.inline {
+    display: inline-flex;
+  }
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+  &.wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  &.row-reverse {
+    flex-direction: row-reverse;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.column-reverse {
+    flex-direction: column-reverse;
+  }
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.items-start {
+    align-items: flex-start;
+  }
+  &.items-end {
+    align-items: flex-end;
+  }
+  &.items-center {
+    align-items: center;
+  }
+}
+
+// 不缩小适应
+#{$v}flex-shrink {
+  flex-shrink: 0;
+}
+
+#{$v}col,
+#{$v}flex,
+[class*=" #{$v2}col-"],
+[class^="#{$v2}col-"],
+[class*=" #{$v2}flex-"],
+[class^="#{$v2}flex-"] {
+  width: 100%;
+  min-height: 1px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#{$v}col,
+#{$v}flex {
+  max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  &-auto {
+    width: auto;
+    max-width: none;
+    flex: 0 0 auto;
+  }
+}
+
+// flex
+@for $i from 1 through 12 {
+  #{$v}col-#{$i} {
+    max-width: math.div(100%, 12) * $i;
+    flex: 0 0 math.div(100%, 12) * $i;
+  }
+  #{$v}flex-#{$i} {
+    max-width: math.div(100%, $i);
+    flex: 0 0 math.div(100%, $i);
+  }
+}
+
+// 列偏移
+@for $i from 1 through 11 {
+  #{$v}offset-#{$i} {
+    margin-left: math.div(100%, 12) * $i;
+  }
+}
+
+// 间隔
+#{$v}box {
+  @for $i from 1 through 10 {
+    // 左右间隔
+    &.lr-#{$i} {
+      margin-left: -#{math.div($i, 16)}rem;
+      margin-right: -#{math.div($i, 16)}rem;
+      > #{$v}col,
+      > #{$v}flex,
+      > [class*=" #{$v2}col-"],
+      > [class^="#{$v2}col-"],
+      > [class*=" #{$v2}flex-"],
+      > [class^="#{$v2}flex-"] {
+        padding-left: #{math.div($i, 16)}rem;
+        padding-right: #{math.div($i, 16)}rem;
+      }
+    }
+    // 上下间隔
+    &.tb-#{$i} {
+      margin-top: -#{math.div($i, 16)}rem;
+      margin-bottom: -#{math.div($i, 16)}rem;
+      > #{$v}col,
+      > #{$v}flex,
+      > [class*=" #{$v2}col-"],
+      > [class^="#{$v2}col-"],
+      > [class*=" #{$v2}flex-"],
+      > [class^="#{$v2}flex-"] {
+        padding-top: #{math.div($i, 16)}rem;
+        padding-bottom: #{math.div($i, 16)}rem;
+      }
+    }
+  }
+
+  &.lr-0 {
+    margin-left: 0;
+    margin-right: 0;
+    > #{$v}col,
+    > #{$v}flex,
+    > [class*=" #{$v2}col-"],
+    > [class^="#{$v2}col-"],
+    > [class*=" #{$v2}flex-"],
+    > [class^="#{$v2}flex-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.tb-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+    > #{$v}col,
+    > #{$v}flex,
+    > [class*=" #{$v2}col-"],
+    > [class^="#{$v2}col-"],
+    > [class*=" #{$v2}flex-"],
+    > [class^="#{$v2}flex-"] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// 媒体查询
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    #{$v}col-#{$device},
+    #{$v}flex-#{$device},
+    [class*=" #{$v2}col-#{$device}-"],
+    [class^="#{$v2}col-#{$device}-"],
+    [class*=" #{$v2}flex-#{$device}-"],
+    [class^="#{$v2}flex-#{$device}-"] {
+      width: 100%;
+      min-height: 1px;
+      position: relative;
+    }
+
+    #{$v}col-#{$device},
+    #{$v}flex-#{$device} {
+      max-width: 100%;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      &-auto {
+        width: auto;
+        max-width: none;
+        flex: 0 0 auto;
+      }
+    }
+
+    // col & flex
+    @for $i from 1 through 12 {
+      #{$v}col-#{$device}-#{$i} {
+        max-width: math.div(100%, 12) * $i;
+        flex: 0 0 math.div(100%, 12) * $i;
+      }
+      #{$v}flex-#{$device}-#{$i} {
+        max-width: math.div(100%, $i);
+        flex: 0 0 math.div(100%, $i);
+      }
+    }
+
+    // 列偏移
+    @for $i from 1 through 11 {
+      #{$v}offset-#{$device}-#{$i} {
+        margin-left: math.div(100%, 12) * $i;
+      }
+    }
+
+    // 网格边距间隔
+    #{$v}box {
+      @for $i from 1 through 10 {
+        // 左右间隔
+        &.lr-#{$device}-#{$i} {
+          margin-left: -#{math.div($i, 16)}rem;
+          margin-right: -#{math.div($i, 16)}rem;
+          > #{$v}col-#{$device},
+          > #{$v}flex-#{$device},
+          > [class*=" #{$v2}col-#{$device}-"],
+          > [class^="#{$v2}col-#{$device}-"],
+          > [class*=" #{$v2}flex-#{$device}-"],
+          > [class^="#{$v2}flex-#{$device}-"] {
+            padding-left: #{math.div($i, 16)}rem;
+            padding-right: #{math.div($i, 16)}rem;
+          }
+        }
+        // 上下间隔
+        &.tb-#{$device}-#{$i} {
+          margin-top: -#{math.div($i, 16)}rem;
+          margin-bottom: -#{math.div($i, 16)}rem;
+          > #{$v}col-#{$device},
+          > #{$v}flex-#{$device},
+          > [class*=" #{$v2}col-#{$device}-"],
+          > [class^="#{$v2}col-#{$device}-"],
+          > [class*=" #{$v2}flex-#{$device}-"],
+          > [class^="#{$v2}flex-#{$device}-"] {
+            padding-top: #{math.div($i, 16)}rem;
+            padding-bottom: #{math.div($i, 16)}rem;
+          }
+        }
+      }
+
+      &.lr-#{$device}-0 {
+        margin-left: 0;
+        margin-right: 0;
+        > #{$v}col-#{$device},
+        > #{$v}flex-#{$device},
+        > [class*=" #{$v2}col-#{$device}-"],
+        > [class^="#{$v2}col-#{$device}-"],
+        > [class*=" #{$v2}flex-#{$device}-"],
+        > [class^="#{$v2}flex-#{$device}-"] {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &.tb-#{$device}-0 {
+        margin-top: 0;
+        margin-bottom: 0;
+        > #{$v}col-#{$device},
+        > #{$v}flex-#{$device},
+        > [class*=" #{$v2}col-#{$device}-"],
+        > [class^="#{$v2}col-#{$device}-"],
+        > [class*=" #{$v2}flex-#{$device}-"],
+        > [class^="#{$v2}flex-#{$device}-"] {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

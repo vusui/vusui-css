@@ -1,0 +1,113 @@
+/*
+ * @Description: 高度样式
+ * @Author: linpan(45650368@qq.com)
+ * @Date: 2022-11-23 14:36:17
+ * @LastEditors: vusui 45650368@qq.com
+ * @LastEditTime: 2022-11-30 15:08:09
+ * @WebSite: https://vusui.com
+ * @Copyright: 2017-present The Vusui Authors
+ * @Readme: 开源不易，且用且珍惜！
+ */
+@use "sass:math";
+
+/*------------------------------
+ * 百分比 & vh
+ *------------------------------
+*/
+$numberList: 50 100;
+@for $i from 1 through length($numberList) {
+  #{$v}h-#{nth($numberList, $i)} {
+    height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}h-min-#{nth($numberList, $i)} {
+    min-height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}h-max-#{nth($numberList, $i)} {
+    max-height: #{nth($numberList, $i) * 1%} !important;
+  }
+  #{$v}vh-#{nth($numberList, $i)} {
+    height: #{nth($numberList, $i)}vh !important;
+  }
+}
+
+/*------------------------------
+ * 像素
+ *------------------------------
+*/
+$numberList2: 1 2 3 4 5 6 7 8 9 10 12 14 15 16 18 20 22 24 25 26 28 30 32 34 35
+  36 38 40 42 44 45 46 48 50;
+@for $i from 1 through length($numberList2) {
+  #{$v}h-px-#{nth($numberList2, $i)} {
+    height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}h-min-px-#{nth($numberList2, $i)} {
+    min-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}h-max-px-#{nth($numberList2, $i)} {
+    max-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+  }
+  #{$v}h-calc-#{nth($numberList2, $i)} {
+    height: calc(100% - #{math.div(nth($numberList2, $i), 16)}rem) !important;
+  }
+  #{$v}vh-calc-#{nth($numberList2, $i)} {
+    height: calc(100vh - #{math.div(nth($numberList2, $i), 16)}rem) !important;
+  }
+}
+
+// 媒体设备
+@each $device, $value in $media-min-width {
+  @include media-min($device) {
+    @for $i from 1 through length($numberList) {
+      #{$v}h-#{$device}-#{nth($numberList, $i)} {
+        height: #{nth($numberList, $i) * 1%} !important;
+      }
+      #{$v}h-min-#{$device}-#{nth($numberList, $i)} {
+        min-height: #{nth($numberList, $i) * 1%} !important;
+      }
+      #{$v}h-max-#{$device}-#{nth($numberList, $i)} {
+        max-height: #{nth($numberList, $i) * 1%} !important;
+      }
+      #{$v}vh-#{$device}-#{nth($numberList, $i)} {
+        height: #{nth($numberList, $i)}vh !important;
+      }
+    }
+    @for $i from 1 through length($numberList2) {
+      #{$v}h-px-#{$device}-#{nth($numberList2, $i)} {
+        height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+      }
+      #{$v}h-min-px-#{$device}-#{nth($numberList2, $i)} {
+        min-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+      }
+      #{$v}h-max-px-#{$device}-#{nth($numberList2, $i)} {
+        max-height: #{math.div(nth($numberList2, $i), 16)}rem !important;
+      }
+      #{$v}h-calc-#{$device}-#{nth($numberList2, $i)} {
+        height: calc(
+          100% - #{math.div(nth($numberList2, $i), 16)}rem
+        ) !important;
+      }
+      #{$v}vh-calc-#{$device}-#{nth($numberList2, $i)} {
+        height: calc(
+          100vh - #{math.div(nth($numberList2, $i), 16)}rem
+        ) !important;
+      }
+    }
+  }
+}
+
+/*------------------------------
+ * 其他
+ *------------------------------
+*/
+#{$v}h-0 {
+  height: 0 !important;
+}
+#{$v}h-auto {
+  height: auto !important;
+}
+#{$v}h-min-auto {
+  min-height: auto !important;
+}
+#{$v}h-max-auto {
+  max-height: auto !important;
+}
