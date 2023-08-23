@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 09:25:39
  * @LastEditors: vusui 45650368@qq.com
- * @LastEditTime: 2022-11-25 15:23:11
+ * @LastEditTime: 2023-08-23 21:02:24
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -61,29 +61,3 @@
 #{$v}full-flex {
   display: flex;
 }
-
-// /*------------------------------
-//  * 媒体设备
-//  *------------------------------
-// */
-// @each $device, $value in $media-min-width {
-//   @include media-min($device) {
-//     @if $device == $xs {
-//       #{$v}container {
-//         max-width: 550px;
-//       }
-//     } @else if $device == $sm {
-//       #{$v}container {
-//         max-width: 740px;
-//       }
-//     } @else if $device == $md {
-//       #{$v}container {
-//         max-width: 1000px;
-//       }
-//     } @else if $device == $lg {
-//       #{$v}container {
-//         max-width: 1200px;
-//       }
-//     }
-//   }
-// }

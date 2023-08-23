@@ -3,7 +3,7 @@
  * @Author: linpan
  * @Date: 2022-11-23 09:25:39
  * @LastEditors: vusui 45650368@qq.com
- * @LastEditTime: 2023-05-12 10:29:21
+ * @LastEditTime: 2023-08-23 20:58:09
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -70,19 +70,23 @@
   @include media-min($device) {
     @if $device == $xs {
       #{$v}container {
-        max-width: 550px;
+        max-width: 540px;
       }
     } @else if $device == $sm {
       #{$v}container {
-        max-width: 740px;
+        max-width: 760px;
       }
     } @else if $device == $md {
       #{$v}container {
-        max-width: 1000px;
+        max-width: 980px;
       }
     } @else if $device == $lg {
       #{$v}container {
         max-width: 1200px;
+      }
+    } @else if $device == $xl {
+      #{$v}container {
+        max-width: 1600px;
       }
     }
   }

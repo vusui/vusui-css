@@ -11,8 +11,6 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@vusui/css": "^7.0.0",
-    "@vusui/icon": "^5.0.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {
