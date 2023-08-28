@@ -1,12 +1,14 @@
 {
   "name": "@vusui/css",
-  "version": "7.2.4",
+  "version": "7.2.5",
   "private": false,
   "description": "免除开发者繁复的手写CSS样式。",
   "main": "lib/style.css",
   "module": "lib/style.css",
   "unpkg": "lib/style.css",
   "jsdelivr": "lib/style.css",
+  "cdnjs": "lib/style.css",
+  "bootcdn": "lib/style.css",
   "files": [
     "lib"
   ],
