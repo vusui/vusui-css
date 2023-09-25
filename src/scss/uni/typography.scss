@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 09:34:44
  * @LastEditors: vusui 45650368@qq.com
- * @LastEditTime: 2023-09-25 10:27:21
+ * @LastEditTime: 2023-09-25 15:28:16
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -294,8 +294,7 @@ $textLH: (
 .vus-move,
 [hover-class*="vus-"] {
   position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 // 水波效果
 .vus-hover:not([disabled]):not(.disabled),
@@ -304,10 +303,10 @@ $textLH: (
     content: "";
     background: rgba(50, 50, 50, 0.1);
     position: absolute;
-    width: 400rpx;
-    height: 400rpx;
-    left: calc(50% - 200rpx);
-    top: calc(50% - 200rpx);
+    width: 600rpx;
+    height: 600rpx;
+    left: calc(50% - 300rpx);
+    top: calc(50% - 300rpx);
     opacity: 0;
     margin: auto;
     border-radius: 50%;
