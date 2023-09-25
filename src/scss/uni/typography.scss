@@ -3,7 +3,7 @@
  * @Author: linpan(45650368@qq.com)
  * @Date: 2022-11-23 09:34:44
  * @LastEditors: vusui 45650368@qq.com
- * @LastEditTime: 2023-05-09 09:23:33
+ * @LastEditTime: 2023-09-25 10:11:56
  * @WebSite: https://vusui.com
  * @Copyright: 2017-present The Vusui Authors
  * @Readme: 开源不易，且用且珍惜！
@@ -284,6 +284,46 @@ $textLH: (
   &-help {
     cursor: help;
   }
+}
+
+/*------------------------------
+ * hover 事件
+ *------------------------------
+*/
+.vus-hover,
+.vus-move,
+[hover-class*="vus-"] {
+  position: relative;
+}
+// 水波效果
+.vus-hover:not([disabled]):not(.disabled),
+[hover-class*="vus-hover"]:not([disabled]):not(.disabled) {
+  &::after {
+    content: "";
+    background: rgba(50, 50, 50, 0.1);
+    position: absolute;
+    width: 300rpx;
+    height: 300rpx;
+    left: calc(50% - 150rpx);
+    top: calc(50% - 150rpx);
+    opacity: 0;
+    margin: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:active::after {
+    transform: scale(0);
+    opacity: 1;
+    transition: 0s;
+  }
+}
+
+// 移动效果(右下移动2rpx)
+.vus-move:not([disabled]):not(.disabled):active,
+[hover-class="vus-move"]:not([disabled]):not(.disabled):active {
+  transform: translate(2rpx, 2rpx);
 }
 
 /*------------------------------
